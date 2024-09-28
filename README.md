@@ -25,9 +25,10 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Step 3
 - Step 4
 
-<h2>Configuration and Deployment Steps</h2>
+<h2>Tutorial</h2>
 
 **Setting Up a Domain Controller and Client in Azure**
+---
 
 🔷 **Create a Resource Group**
 - Ensure the virtual network and virtual machines are in the same region as the resource group.
@@ -47,7 +48,7 @@ This tutorial outlines the implementation of on-premises Active Directory within
   - Azure Portal > Virtual Machines > DC-1 > Networking > IP Configuration > Set Private IP to Static > Save.
 
 🔷 **Disable the Windows Firewall on DC-1**
-- Connect via Remote Desktop.
+- Log in to DC-1 via Remote Desktop.
 - Open `wf.msc` from the Run command.
 - Go to **Windows Defender Firewall Properties**.
 - Set the Firewall state to **Off** for Domain, Private, and Public Profiles.
@@ -73,14 +74,70 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Run the following command to test connectivity:  
   `ping <DC-1-private-IP-address>`
 
+**Deploying Active Directory**
+---
+🔷 **Install Active Directory on DC-1**  
+- Log in to **DC-1 via RDP**  
+- Open **Server Manager**  
+- Navigate to **Add Roles and Features**  
+- In **Server Selection**, ensure dc-1 is selected  
+- Under **Server Roles**, select **Active Directory Domain Services**  
+- Confirm by clicking **Add Features**  
+- Click **Install** and wait for the process to complete  
+
+🔷 **Configure Active Directory to become a domain controller**  
+- Once Active Directory is installed, click **Promote this server to a domain controller**  
+- Select **Add a new forest**  
+- Root domain name: **mydomain.com**  
+- Create a username and password  
+- De-select **Create DNS delegation**  
+- Click **Install** (Note: The server will restart)  
+- After the restart, choose to log in as a domain user using:  
+  `mydomain.com\labuser`  
+
+🔷 **Create Organizational Units**  
+- Open **Active Directory Users and Computers (ADUC)**  
+- Navigate to **mydomain.com**  
+- Right-click on **mydomain.com** > **New** > **Organizational Unit**  
+- Create the following Organizational Units (OUs):  
+  - `_EMPLOYEES`  
+  - `_ADMINS`  
+  - `_CLIENTS`  
+
+🔷 **Create a Domain Admin user**  
+- In **_ADMINS**, right-click > **New** > **User**  
+- Create user: **Jane Doe** with the username: **jane_admin**  
+- To make Jane Doe an admin:  
+  - Right-click **Jane Doe** > **Properties**  
+  - Go to the **Member Of** tab > **Add** > Enter: **Domain Admins**  
+  - Click **Apply**  
+
+🔷 **Log out and log back in as Jane Doe**  
+- Log out of **DC-1**  
+- Log back in to `mydomain.com\jane_admin`  
+- Use **jane_admin** as the admin account from now on  
+
+🔷 **Join Client-1 to your domain (mydomain.com)**  
+- Log in to **Client-1** as the original local admin (**labuser**) via RDP  
+- Open **System** > **Rename this PC (advanced)**  
+- Click **Computer Name Change**  
+- Under **Member of**, enter: **mydomain.com**  
+- Click **OK** and restart **Client-1**  
+- Log in to **DC-1** and verify that **Client-1** appears in **Active Directory Users and Computers** under **mydomain.com > Computers**  
+- Move **Client-1** into the **_CLIENTS** Organizational Unit  
+
+🔷 **Setup Remote Desktop for non-administrative users on Client-1**  
+- Log in to **Client-1** as `mydomain.com\jane_admin` via RDP  
+- Open **System** > **Remote Desktop**  
+- Click **Select users that can remotely access this PC**  
+- Add **Domain Users** > Click **OK**  
+
+🔷 **Create additional users and log in to Client-1**  
+- Log in to **DC-1** as `jane_admin` via RDP  
+- Open **PowerShell_ise as an Administrator**  
+- Create a new file and paste the following [script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)  
+- Run the [script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) to create users in the _EMPLOYEES OU  
+Each user will have the default password: Password1 (this can be changed)  
+- Use RDP to log in to Client-1 with one of the generated user accounts and ensure that log in is successful
 
 
-
-
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
