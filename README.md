@@ -140,4 +140,60 @@ This tutorial outlines the implementation of on-premises Active Directory within
 Each user will have the default password: Password1 (this can be changed)  
 - Use RDP to log in to Client-1 with one of the generated user accounts and ensure that log in is successful
 
+**Managing User Account Security and Logs in Active Directory**
+---
+
+🔷**Dealing with Account Lockouts**
+- Log into DC-1**
+- Open **Active Directory Users and Computers**.
+- Select a random user previously created in the **_EMPLOYEES** OU.
+- Attempt to log into **Client-1** as the selected user with a purposely incorrect password **10 times**.
+- Then, attempt to use the correct password: **Password1**.  
+  You will notice that you can log in normally. Therefore, in the next steps, we will create a lock-out policy via Group Policy.
+
+🔷 **Configure Group Policy to Lockout Accounts after 5 Failed Attempts**
+- Log in to **DC-1** as the admin user (**jane_admin**).
+- Open **Group Policy Management Console (gpmc.msc)** via the Run command.
+- Right-click **Default Domain Policy** under **mydomain.com** and select **Edit**.
+- Navigate to **Computer Configuration** > **Policies** > **Windows Settings** > **Security Settings** > **Account Policies** > **Account Lockout Policy**.
+
+🔷 **Set Account Lockout Policy**  
+- **Account Lockout Duration**: Set to **30 minutes** (Time before a locked account unlocks automatically).
+- **Account Lockout Threshold**: Set to **5 invalid logon attempts** (Number of failed logon attempts that trigger a lockout).
+- **Reset Account Lockout Counter After**: Set to **10 minutes** (Time before the failed attempts counter resets to 0).
+
+🔷 **Verify the Policy**
+- Log into **Client-1** as **jane_admin**.
+- Open **Command Line** and run: gpupdate /force
+
+🔷 **Test the Lockout Policy**
+- Select the same user and attempt to log in with purposely incorrect passwords.
+- After the **5th** incorrect password, the account will lock, and a message will be displayed.
+
+🔷 **Unlock the User**
+- In **DC-1**, open **Active Directory Users and Computers**.
+- Right-click **mydomain** and **Find** the user.
+- Double-click the user, go to the **Account** tab, and select:  
+**"Unlock account. This account is currently locked out on the Active Directory Domain Controller"**.
+- To reset the password, right-click the user and select **Reset Password**.
+- Attempt to log in again and observe that you now have access.
+
+## Enabling and Disabling Accounts
+
+🔷 **Disable a User Account in Active Directory**
+- In **Active Directory Users and Computers**, navigate to **_EMPLOYEES**.
+- Right-click the user and select **Disable Account**.
+- Attempt to log in to **Client-1** with the disabled account and observe the error message.
+
+🔷 **Re-enable the User Account**
+- Right-click the same user and select **Enable Account**.
+- Attempt to log in with the re-enabled account.
+
+## Observing Logs
+
+🔷 **Observe Logs on DC-1 or Client-1**
+- Log into **DC-1** or **Client-1** as **jane_admin** via RDP.
+- Open **Event Viewer** (`eventvwr.msc`) > **Windows Logs** > **Security**.
+- Observe the **Audit Failure** with **Event ID 4625**.
+
 
