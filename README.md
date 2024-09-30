@@ -3,7 +3,9 @@
 </p>
 
 <h1>On-premises Active Directory Deployed in the Cloud (Azure)</h1>
-This tutorial outlines the implementation of on-premises Active Directory within Azure Virtual Machines.<br />
+This lab demonstrates the process of setting up and configuring a Domain Controller and Client VM in Azure, integrating them into a functional Active Directory environment. The goal is to establish a domain, join client machines to it, and enforce security policies such as account lockout thresholds. 
+
+Key tasks include configuring DNS settings, ensuring domain communication between the machines, creating user accounts and Organizational Units (OUs), and managing users' account security by locking and unlocking accounts based on incorrect login attempts. Finally, we will review event logs to observe security-related activities.<br />
 
 
 <h2>Environments and Technologies Used</h2>
@@ -20,10 +22,15 @@ This tutorial outlines the implementation of on-premises Active Directory within
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Set up Azure VMs
+- Install Active Directory
+- Join Client to Domain
+- Set DNS Settings
+- Create Organizational Units
+- Configure Group Policy
+- Test Account Lockouts
+- Manage User Accounts
+- Observe Security Logs
 
 <h2>Tutorial</h2>
 
