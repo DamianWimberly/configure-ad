@@ -34,22 +34,25 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 
 🔷 ***Setting Up a Domain Controller and Client in Azure***
 ---
+- **Set Up Resource Group, Virtual Network, and Subnet**  
+  *Ensure the virtual network and virtual machines are in the same region as the resource group.*  
+  *Attach the virtual network and subnet to the resource group for proper networking.*
 
-- Create a Resource Group
-  - Ensure the virtual network and virtual machines are in the same region as the resource group.
+  - Create a **Resource Group** in the desired region.
+  - Create a **Virtual Network** and **Subnet**.
+  - Attach the **Virtual Network** and **Subnet** to the **Resource Group**.
 
-- Create a Virtual Network and Subnet
-  - Attach this to the resource group for proper networking.
-
-- Create the Domain Controller (DC-1)
+- Create the Domain Controller **(DC-1)**
   - Image: Windows Server 2022 (at least 2 vCPUs)
   - Name: DC-1
   - Username: labuser, Password: Cyberlab123!
   - Virtual Network: Select the network created earlier, leave subnet as default.
 
-- Set DC-1’s Private IP Address to Static
-  - This ensures the IP address remains fixed, which is necessary for DNS.
-  - Azure Portal > Virtual Machines > DC-1 > Networking > IP Configuration > Set Private IP to Static > Save.
+- **Set DC-1’s Private IP Address to Static**  
+  *This ensures the IP address remains fixed, which is necessary for DNS.*
+
+  - Navigate to **Azure Portal** > **Virtual Machines** > **DC-1** > **Networking** > **IP Configuration**.
+  - Set the **Private IP** to **Static** and click **Save**.
 
 - Disable the Windows Firewall on DC-1
   - Log in to DC-1 via Remote Desktop.
@@ -64,13 +67,16 @@ This lab demonstrates the process of setting up and configuring a Domain Control
   - Username: labuser, Password: Cyberlab123!
   - Virtual Network: Select the same network used for DC-1, leave subnet as default.
 
-- Set Client-1 to Use DC-1 as DNS**
-  - Update Client-1’s DNS settings to use DC-1’s private IP.
+- **Set Client-1 to Use DC-1 as DNS**  
+  *Update Client-1’s DNS settings to use DC-1’s private IP for proper network resolution.*  
+
   - Azure Portal > Virtual Machines > Client-1 > Networking > DNS Servers > Set to Custom and enter DC-1’s static private IP > Save.
 
-- Restart Client-1
-  - This applies the new DNS settings.
+- **Restart Client-1**  
+  *This applies the new DNS settings to ensure connectivity.*  
+
   - Virtual Machines > Client-1 > Restart.
+
 
 🔷 **Ping DC-1 from Client-1**
 - Open **Command Prompt** or **PowerShell** on Client-1.  
