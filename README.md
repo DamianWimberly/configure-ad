@@ -32,46 +32,44 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 
 <h2>Tutorial</h2>
 
-**Setting Up a Domain Controller and Client in Azure**
+🔷 ***Setting Up a Domain Controller and Client in Azure***
 ---
 
-🔷 **Create a Resource Group**
-- Ensure the virtual network and virtual machines are in the same region as the resource group.
+- Create a Resource Group
+  - Ensure the virtual network and virtual machines are in the same region as the resource group.
 
-🔷 **Create a Virtual Network and Subnet**
-- Attach this to the resource group for proper networking.
+- Create a Virtual Network and Subnet
+  - Attach this to the resource group for proper networking.
 
-🔷 **Create the Domain Controller (DC-1)**
-- Image: Windows Server 2022 (at least 2 vCPUs)
-- Name: DC-1
-- Username: labuser
-- Password: Cyberlab123!
-- Virtual Network: Select the network created earlier, leave subnet as default.
+- Create the Domain Controller (DC-1)
+  - Image: Windows Server 2022 (at least 2 vCPUs)
+  - Name: DC-1
+  - Username: labuser, Password: Cyberlab123!
+  - Virtual Network: Select the network created earlier, leave subnet as default.
 
-🔷 **Set DC-1’s Private IP Address to Static**
-- This ensures the IP address remains fixed, which is necessary for DNS.
+- Set DC-1’s Private IP Address to Static
+  - This ensures the IP address remains fixed, which is necessary for DNS.
   - Azure Portal > Virtual Machines > DC-1 > Networking > IP Configuration > Set Private IP to Static > Save.
 
-🔷 **Disable the Windows Firewall on DC-1**
-- Log in to DC-1 via Remote Desktop.
-- Open `wf.msc` from the Run command.
-- Go to **Windows Defender Firewall Properties**.
-- Set the Firewall state to **Off** for Domain, Private, and Public Profiles.
-- Apply the changes.
+- Disable the Windows Firewall on DC-1
+  - Log in to DC-1 via Remote Desktop.
+  - Open `wf.msc` from the Run command.
+  - Go to **Windows Defender Firewall Properties**.
+  - Set the Firewall state to **Off** for Domain, Private, and Public Profiles.
+  - Apply the changes.
 
-🔷 **Create the Client-1 VM**
-- Image: Windows 10 Pro (at least 2 vCPUs)
-- Name: Client-1
-- Username: labuser
-- Password: Cyberlab123!
-- Virtual Network: Select the same network used for DC-1, leave subnet as default.
+- Create the Client-1 VM
+  - Image: Windows 10 Pro (at least 2 vCPUs)
+  - Name: Client-1
+  - Username: labuser, Password: Cyberlab123!
+  - Virtual Network: Select the same network used for DC-1, leave subnet as default.
 
-🔷 **Set Client-1 to Use DC-1 as DNS**
-- Update Client-1’s DNS settings to use DC-1’s private IP.
+- Set Client-1 to Use DC-1 as DNS**
+  - Update Client-1’s DNS settings to use DC-1’s private IP.
   - Azure Portal > Virtual Machines > Client-1 > Networking > DNS Servers > Set to Custom and enter DC-1’s static private IP > Save.
 
-🔷 **Restart Client-1**
-- This applies the new DNS settings.
+- Restart Client-1
+  - This applies the new DNS settings.
   - Virtual Machines > Client-1 > Restart.
 
 🔷 **Ping DC-1 from Client-1**
