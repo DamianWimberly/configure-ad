@@ -30,7 +30,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - Manage User Accounts
 - Observe Security Logs
 
-<h2>Tutorial</h2>
+<h2>Tutorial:</h2>
 
  ***Setting Up a Domain Controller and Client in Azure***
 ---
