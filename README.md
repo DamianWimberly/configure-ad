@@ -12,7 +12,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - Remote Desktop
 - Active Directory Domain Services
 - PowerShell
-
+  
 <h2>Operating Systems Used </h2>
 
 - Windows Server 2022
@@ -32,177 +32,176 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 
 <h2>Tutorial</h2>
 
-🔷 ***Setting Up a Domain Controller and Client in Azure***
----
-- **Set Up Resource Group, Virtual Network, and Subnet**  
-  *Ensure the virtual network and virtual machines are in the same region as the resource group.*  
-  *Attach the virtual network and subnet to the resource group for proper networking.*
-
-  - Create a **Resource Group** in the desired region.
-  - Create a **Virtual Network** and **Subnet**.
-  - Attach the **Virtual Network** and **Subnet** to the **Resource Group**.
-
-- Create the Domain Controller **(DC-1)**
-  - Image: Windows Server 2022 (at least 2 vCPUs)
-  - Name: DC-1
-  - Username: labuser, Password: Cyberlab123!
-  - Virtual Network: Select the network created earlier, leave subnet as default.
-
-- **Set DC-1’s Private IP Address to Static**  
-  *This ensures the IP address remains fixed, which is necessary for DNS.*
-
-  - Navigate to **Azure Portal** > **Virtual Machines** > **DC-1** > **Networking** > **IP Configuration**.
-  - Set the **Private IP** to **Static** and click **Save**.
-
-- Disable the Windows Firewall on DC-1
-  - Log in to DC-1 via Remote Desktop.
-  - Open `wf.msc` from the Run command.
-  - Go to **Windows Defender Firewall Properties**.
-  - Set the Firewall state to **Off** for Domain, Private, and Public Profiles.
-  - Apply the changes.
-
-- Create the Client-1 VM
-  - Image: Windows 10 Pro (at least 2 vCPUs)
-  - Name: Client-1
-  - Username: labuser, Password: Cyberlab123!
-  - Virtual Network: Select the same network used for DC-1, leave subnet as default.
-
-- **Set Client-1 to Use DC-1 as DNS**  
-  *Update Client-1’s DNS settings to use DC-1’s private IP for proper network resolution.*  
-
-  - Azure Portal > Virtual Machines > Client-1 > Networking > DNS Servers > Set to Custom and enter DC-1’s static private IP > Save.
-
-- **Restart Client-1**  
-  *This applies the new DNS settings to ensure connectivity.*  
-
-  - Virtual Machines > Client-1 > Restart.
-
-
-🔷 **Ping DC-1 from Client-1**
-- Open **Command Prompt** or **PowerShell** on Client-1.  
-- Run the following command to test connectivity:  
-  `ping <DC-1-private-IP-address>`
-
-**Deploying Active Directory**
----
-🔷 **Install Active Directory on DC-1**  
-- Log in to **DC-1 via RDP**  
-- Open **Server Manager**  
-- Navigate to **Add Roles and Features**  
-- In **Server Selection**, ensure dc-1 is selected  
-- Under **Server Roles**, select **Active Directory Domain Services**  
-- Confirm by clicking **Add Features**  
-- Click **Install** and wait for the process to complete  
-
-🔷 **Configure Active Directory to become a domain controller**  
-- Once Active Directory is installed, click **Promote this server to a domain controller**  
-- Select **Add a new forest**  
-- Root domain name: **mydomain.com**  
-- Create a username and password  
-- De-select **Create DNS delegation**  
-- Click **Install** (Note: The server will restart)  
-- After the restart, choose to log in as a domain user using:  
-  `mydomain.com\labuser`  
-
-🔷 **Create Organizational Units**  
-- Open **Active Directory Users and Computers (ADUC)**  
-- Navigate to **mydomain.com**  
-- Right-click on **mydomain.com** > **New** > **Organizational Unit**  
-- Create the following Organizational Units (OUs):  
-  - `_EMPLOYEES`  
-  - `_ADMINS`  
-  - `_CLIENTS`  
-
-🔷 **Create a Domain Admin user**  
-- In **_ADMINS**, right-click > **New** > **User**  
-- Create user: **Jane Doe** with the username: **jane_admin**  
-- To make Jane Doe an admin:  
-  - Right-click **Jane Doe** > **Properties**  
-  - Go to the **Member Of** tab > **Add** > Enter: **Domain Admins**  
-  - Click **Apply**  
-
-🔷 **Log out and log back in as Jane Doe**  
-- Log out of **DC-1**  
-- Log back in to `mydomain.com\jane_admin`  
-- Use **jane_admin** as the admin account from now on  
-
-🔷 **Join Client-1 to your domain (mydomain.com)**  
-- Log in to **Client-1** as the original local admin (**labuser**) via RDP  
-- Open **System** > **Rename this PC (advanced)**  
-- Click **Computer Name Change**  
-- Under **Member of**, enter: **mydomain.com**  
-- Click **OK** and restart **Client-1**  
-- Log in to **DC-1** and verify that **Client-1** appears in **Active Directory Users and Computers** under **mydomain.com > Computers**  
-- Move **Client-1** into the **_CLIENTS** Organizational Unit  
-
-🔷 **Setup Remote Desktop for non-administrative users on Client-1**  
-- Log in to **Client-1** as `mydomain.com\jane_admin` via RDP  
-- Open **System** > **Remote Desktop**  
-- Click **Select users that can remotely access this PC**  
-- Add **Domain Users** > Click **OK**  
-
-🔷 **Create additional users and log in to Client-1**  
-- Log in to **DC-1** as `jane_admin` via RDP  
-- Open **PowerShell_ise as an Administrator**  
-- Create a new file and paste the following [script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)  
-- Run the [script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) to create users in the _EMPLOYEES OU  
-Each user will have the default password: Password1 (this can be changed)  
-- Use RDP to log in to Client-1 with one of the generated user accounts and ensure that log in is successful
-
-**Managing User Account Security and Logs in Active Directory**
+ ***Setting Up a Domain Controller and Client in Azure***
 ---
 
-🔷**Dealing with Account Lockouts**
-- Log into DC-1**
+🟣**Create Resource Group, Virtual Network, and Subnet**  
+*Ensure proper networking by setting up the virtual network and subnet within the same region as the resource group.*
+
+- Create a **Resource Group** in the desired region.
+- Set up a **Virtual Network** and **Subnet**.
+- Attach the **Virtual Network** and **Subnet** to the **Resource Group**.
+
+🟣**Create the Domain Controller (DC-1)**  
+*Create a virtual machine to act as the domain controller.*
+
+- Image: Windows Server 2022 (at least 2 vCPUs)
+- Name: DC-1
+- Username: labuser, Password: Cyberlab123!
+- Virtual Network: Select the network created earlier; leave subnet as default.
+
+🟣**Set DC-1’s Private IP Address to Static**  
+*To ensure consistent network configuration, set DC-1's private IP to static.*
+
+- Azure Portal > **Virtual Machines** > **DC-1** > **Networking** > **IP Configuration**.
+ - Set **Private IP** to **Static** and click **Save**.
+
+🟣**Disable the Windows Firewall on DC-1**  
+*Turn off the firewall for testing purposes.*
+
+- Log in to **DC-1** via Remote Desktop.
+- Open `wf.msc` from the Run command.
+- Go to **Windows Defender Firewall Properties**.
+- Set the Firewall state to **Off** for Domain, Private, and Public Profiles.
+- Apply the changes.
+
+🟣**Create the Client-1 VM**  
+*Set up a client virtual machine for testing domain connectivity.*
+
+- Image: Windows 10 Pro (at least 2 vCPUs)
+- Name: Client-1
+- Username: labuser, Password: Cyberlab123!
+- Virtual Network: Select the same network used for DC-1; leave subnet as default.
+
+🟣**Set Client-1 to Use DC-1 as DNS**  
+*Configure Client-1’s DNS to point to DC-1’s private IP.*
+
+- Azure Portal > **Virtual Machines** > **Client-1** > **Networking** > **DNS Servers**.
+- Set to **Custom** and enter DC-1’s static private IP.
+- Save the settings.
+
+🟣**Restart Client-1**  
+*Apply the new DNS settings by restarting Client-1.*
+
+- Azure Portal > **Virtual Machines** > **Client-1** > **Restart**.
+
+🟣**Ping DC-1 from Client-1**  
+*Verify network connectivity between Client-1 and DC-1.*
+
+- Open **Command Prompt** or **PowerShell** on **Client-1**.
+ - Run the following command:  
+  `ping <DC-1-private-IP-address>`.
+
+***Deploying Active Directory***
+---
+
+🟢**Install Active Directory on DC-1**  
+*Set up Active Directory to make DC-1 a domain controller.*
+
+- Log in to **DC-1** via RDP.
+- Open **Server Manager** > **Add Roles and Features**.
+- Select **Active Directory Domain Services** > **Add Features** > **Install**.
+- After installation, click **Promote this server to a domain controller**.
+  - Select **Add a new forest** with root domain name: **mydomain.com**.
+  - Set up a username/password, de-select **Create DNS delegation**, and click **Install**.
+  - After restart, log in as `mydomain.com\labuser`.
+
+🟢**Create Organizational Units (OUs)**  
+*Organize resources within the domain by creating Organizational Units.*
+
+- Open **Active Directory Users and Computers (ADUC)**.
+- Right-click **mydomain.com** > **New** > **Organizational Unit**.
+- Create the following OUs:
+  - `_EMPLOYEES`
+  - `_ADMINS`
+  - `_CLIENTS`
+
+🟢**Create a Domain Admin User**  
+*Create a user with domain admin privileges.*
+
+- In **_ADMINS**, right-click > **New** > **User**.
+- Create user: **Jane Doe** with the username: **jane_admin**.
+- Right-click **Jane Doe** > **Properties** > **Member Of** > **Add** > **Domain Admins**.
+
+🟢**Log out and log back in as Jane Doe**  
+*Use the domain admin account for future configurations.*
+
+- Log out of **DC-1**.
+- Log back in as `mydomain.com\jane_admin`.
+
+🟢**Join Client-1 to the Domain**  
+*Add Client-1 to the domain for centralized management.*
+
+- Log in to **Client-1** as **labuser** via RDP.
+- Open **System** > **Rename this PC (advanced)**.
+- Under **Member of**, enter: **mydomain.com**.
+- Click **OK** and restart **Client-1**.
+- Verify **Client-1** appears in **ADUC** under **mydomain.com > Computers**.
+- Move **Client-1** to the **_CLIENTS** OU.
+
+🟢**Set Up Remote Desktop for Non-Admin Users on Client-1**  
+*Enable domain users to access Client-1 via Remote Desktop.*
+
+- Log in to **Client-1** as `mydomain.com\jane_admin`.
+- Open **System** > **Remote Desktop**.
+- Click **Select users that can remotely access this PC**.
+- Add **Domain Users** > Click **OK**.
+
+🟢**Create Additional Users and Log In to Client-1**  
+*Create multiple users in the _EMPLOYEES OU for testing.*
+
+- Log in to **DC-1** as `jane_admin`.
+- Open **PowerShell ISE** as Administrator.
+- Run the [user creation script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) to generate users.
+- Log in to **Client-1** with one of the generated accounts.
+
+***Managing User Account Security and Logs in Active Directory***
+---
+
+⚫️**Dealing with Account Lockouts**  
+*Test the account lockout functionality and configure the policy.*
+
+- Log into **DC-1**.
 - Open **Active Directory Users and Computers**.
-- Select a random user previously created in the **_EMPLOYEES** OU.
-- Attempt to log into **Client-1** as the selected user with a purposely incorrect password **10 times**.
-- Then, attempt to use the correct password: **Password1**.  
-  You will notice that you can log in normally. Therefore, in the next steps, we will create a lock-out policy via Group Policy.
+- Select a user in **_EMPLOYEES**, log into **Client-1**, and attempt incorrect passwords 10 times.
+- After 10 attempts, use the correct password. No lockout occurs until Group Policy is configured.
 
-🔷 **Configure Group Policy to Lockout Accounts after 5 Failed Attempts**
-- Log in to **DC-1** as the admin user (**jane_admin**).
-- Open **Group Policy Management Console (gpmc.msc)** via the Run command.
-- Right-click **Default Domain Policy** under **mydomain.com** and select **Edit**.
+⚫️**Configure Group Policy to Lock Out Accounts After 5 Failed Attempts**  
+*Apply an account lockout policy to prevent brute force attacks.*
+
+- Log in to **DC-1** as `jane_admin`.
+- Open **Group Policy Management Console**.
+- Right-click **Default Domain Policy** > **Edit**.
 - Navigate to **Computer Configuration** > **Policies** > **Windows Settings** > **Security Settings** > **Account Policies** > **Account Lockout Policy**.
+- Set **Account Lockout Duration** to **30 minutes**.
+- Set **Account Lockout Threshold** to **5 invalid logon attempts**.
+- Set **Reset Account Lockout Counter After** to **10 minutes**.
+- Run `gpupdate /force` on **Client-1** to apply the policy.
 
-🔷 **Set Account Lockout Policy**  
-- **Account Lockout Duration**: Set to **30 minutes** (Time before a locked account unlocks automatically).
-- **Account Lockout Threshold**: Set to **5 invalid logon attempts** (Number of failed logon attempts that trigger a lockout).
-- **Reset Account Lockout Counter After**: Set to **10 minutes** (Time before the failed attempts counter resets to 0).
+⚫️**Test the Lockout Policy**  
+*Verify the account lockout after 5 failed login attempts.*
 
-🔷 **Verify the Policy**
-- Log into **Client-1** as **jane_admin**.
-- Open **Command Line** and run: gpupdate /force
+- Attempt incorrect passwords for a user on **Client-1**.
+- After 5 attempts, the account will be locked.
 
-🔷 **Test the Lockout Policy**
-- Select the same user and attempt to log in with purposely incorrect passwords.
-- After the **5th** incorrect password, the account will lock, and a message will be displayed.
+⚫️**Unlock the User Account**  
+*Manually unlock a locked-out user.*
 
-🔷 **Unlock the User**
-- In **DC-1**, open **Active Directory Users and Computers**.
-- Right-click **mydomain** and **Find** the user.
-- Double-click the user, go to the **Account** tab, and select:  
-**"Unlock account. This account is currently locked out on the Active Directory Domain Controller"**.
-- To reset the password, right-click the user and select **Reset Password**.
-- Attempt to log in again and observe that you now have access.
+- On **DC-1**, open **Active Directory Users and Computers**.
+- Right-click the user and select **Unlock Account**.
+- Optionally reset the password.
 
-## Enabling and Disabling Accounts
+*⚫️*Enable and Disable User Accounts**  
+*Test account disabling and re-enabling functionality.*
 
-🔷 **Disable a User Account in Active Directory**
-- In **Active Directory Users and Computers**, navigate to **_EMPLOYEES**.
-- Right-click the user and select **Disable Account**.
-- Attempt to log in to **Client-1** with the disabled account and observe the error message.
+- On **DC-1**, navigate to **_EMPLOYEES** in **ADUC**.
+- Right-click a user and select **Disable Account**.
+- Attempt to log in on **Client-1** and observe the error.
+- Re-enable the account and log in again.
 
-🔷 **Re-enable the User Account**
-- Right-click the same user and select **Enable Account**.
-- Attempt to log in with the re-enabled account.
+⚫️**Observing Logs**  
+*Check logs for login failures and account lockouts.*
 
-## Observing Logs
-
-🔷 **Observe Logs on DC-1 or Client-1**
-- Log into **DC-1** or **Client-1** as **jane_admin** via RDP.
-- Open **Event Viewer** (`eventvwr.msc`) > **Windows Logs** > **Security**.
-- Observe the **Audit Failure** with **Event ID 4625**.
-
-
+- Log in to **DC-1** or **Client-1** as `jane_admin`.
+- Open **Event Viewer** > **Windows Logs** > **Security**.
+- Look for **Audit Failure** events with **Event ID 4625**.
