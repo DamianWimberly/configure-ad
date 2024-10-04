@@ -111,10 +111,10 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 
 - Open **Active Directory Users and Computers (ADUC)**.
 - Right-click **mydomain.com** > **New** > **Organizational Unit**.
-- Create the following OUs:
-  - `_EMPLOYEES`
-  - `_ADMINS`
-  - `_CLIENTS`
+    - Create the following OUs:
+      - `_EMPLOYEES`
+      - `_ADMINS`
+      - `_CLIENTS`
 
 🟢**Create a Domain Admin User**  
 *Create a user with domain admin privileges.*
