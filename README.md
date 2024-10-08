@@ -100,11 +100,11 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 
 - Log in to **DC-1** via RDP.
 - Open **Server Manager** > **Add Roles and Features**.
-- Select **Active Directory Domain Services** > **Add Features** > **Install**.
-- After installation, click **Promote this server to a domain controller**.
-  - Select **Add a new forest** with root domain name: **mydomain.com**.
-  - Set up a username/password, de-select **Create DNS delegation**, and click **Install**.
-  - After restart, log in as `mydomain.com\labuser`.
+    - Select **Active Directory Domain Services** > **Add Features** > **Install**.
+    - After installation, click **Promote this server to a domain controller**.
+    - Select **Add a new forest** with root domain name: **mydomain.com**.
+    - Set up a username/password, de-select **Create DNS delegation**, and click **Install**.
+    - After restart, log in as `mydomain.com\labuser`.
 
 🔶**Create Organizational Units (OUs)**  
 *Organize resources within the domain by creating Organizational Units.*
@@ -133,9 +133,9 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 *Add Client-1 to the domain for centralized management.*
 
 - Log in to **Client-1** as **labuser** via RDP.
-- Open **System** > **Rename this PC (advanced)**.
-- Under **Member of**, enter: **mydomain.com**.
-- Click **OK** and restart **Client-1**.
+    - Open **System** > **Rename this PC (advanced)**.
+    - Under **Member of**, enter: **mydomain.com**.
+    - Click **OK** and restart **Client-1**.
 - Verify **Client-1** appears in **ADUC** under **mydomain.com > Computers**.
 - Move **Client-1** to the **_CLIENTS** OU.
 
