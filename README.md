@@ -101,7 +101,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - Log in to **DC-1** via RDP.
 - Open **Server Manager** > **Add Roles and Features**.
     - Select **Active Directory Domain Services** > **Add Features** > **Install**.
-    - After installation, click **Promote this server to a domain controller**.
+- After installation, click **Promote this server to a domain controller**.
     - Select **Add a new forest** with root domain name: **mydomain.com**.
     - Set up a username/password, de-select **Create DNS delegation**, and click **Install**.
     - After restart, log in as `mydomain.com\labuser`.
