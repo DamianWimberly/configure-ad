@@ -205,3 +205,18 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - Log in to **DC-1** or **Client-1** as `jane_admin`.
 - Open **Event Viewer** > **Windows Logs** > **Security**.
     - Look for **Audit Failure** events with **Event ID 4625**.
+ 
+<table>
+  <tr>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  <tr>
+    <td>Step 1</td>
+    <td>Step 2</td>
+    <td>Step 3</td>
+    <td>Step 4</td>
+  </tr>
+</table>
+
