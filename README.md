@@ -34,13 +34,26 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 
  ***Setting Up a Domain Controller and Client in Azure***
 ---
+*[⚠️ Images include further notes and direction]*
+
 
 🔷***Create Resource Group, Virtual Network, and Subnet***  
 *Ensure proper networking by setting up the virtual network and subnet within the same region as the resource group.*
 
 - Create a **Resource Group** in the desired region.
-- Set up a **Virtual Network** and **Subnet**.
+- Set up a **Virtual Network** and **Subnet** (*subnet will be created by default*).
     - Attach the **Virtual Network** and **Subnet** to the **Resource Group**.
+  <table>
+  <tr>
+    <td><img width="200" height="150" alt="create-a-resource-group" src="https://github.com/user-attachments/assets/2647a5f2-620e-4388-aa5d-2001ffd95e1c">
+</td>
+    <td><img width="200" height="150" alt="create-a-virtual-network" src="https://github.com/user-attachments/assets/21e03f02-f059-4c1f-9a87-2c51ec65e9cd"></td>
+  <tr>
+    <td>Step 1</td>
+    <td>Step 2</td>
+  </tr>
+</table>
+
 
 🔷***Create the Domain Controller (DC-1)***  
 *Create a virtual machine to act as the domain controller.*
