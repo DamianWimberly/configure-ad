@@ -37,12 +37,12 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 *[⚠️ Images include further notes and direction]*
 
 
-🔷***Create Resource Group, Virtual Network, and Subnet***  
-*Ensure proper networking by setting up the virtual network and subnet within the same region as the resource group.*
+🔷***Create Resource Group and Virtual Network***  
+*Ensure proper networking by setting up the virtual network within the same region as the resource group.*
 
 - Create a **Resource Group** in the desired region.
-- Set up a **Virtual Network** and **Subnet** (*subnet will be created by default*).
-    - Attach the **Virtual Network** and **Subnet** to the **Resource Group**.
+- Set up a **Virtual Network** 
+    - Attach the **Virtual Network** to the **Resource Group**.
   <table>
   <tr>
     <td><img width="200" height="150" alt="create-a-resource-group" src="https://github.com/user-attachments/assets/2647a5f2-620e-4388-aa5d-2001ffd95e1c">
@@ -58,11 +58,11 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 
 🔷***Create the Domain Controller (DC-1)***  
 *Create a virtual machine to act as the domain controller.*
-
+- Resource Group: Select one created in 
 - Image: Windows Server 2022 (at least 2 vCPUs)
 - Name: DC-1
 - Username: labuser, Password: Cyberlab123!
-- Virtual Network: Select the network created earlier; leave subnet as default.
+- Virtual Network: Select the network created earlier; *leave subnet as default*.
 
 🔷***Set DC-1’s Private IP Address to Static***  
 *To ensure consistent network configuration, set DC-1's private IP to static.*
@@ -85,7 +85,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - Image: Windows 10 Pro (at least 2 vCPUs)
 - Name: Client-1
 - Username: labuser, Password: Cyberlab123!
-- Virtual Network: Select the same network used for DC-1; leave subnet as default.
+- Virtual Network: Select the same network used for DC-1; *leave subnet as default*.
 
 🔷***Set Client-1 to Use DC-1 as DNS***  
 *Configure Client-1’s DNS to point to DC-1’s private IP so it can locate the domain controller for authentication and network services.*
