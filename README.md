@@ -47,7 +47,8 @@ This lab demonstrates the process of setting up and configuring a Domain Control
   <tr>
     <td><img width="200" height="150" alt="create-a-resource-group" src="https://github.com/user-attachments/assets/2647a5f2-620e-4388-aa5d-2001ffd95e1c">
 </td>
-    <td><img width="200" height="150" alt="create-a-virtual-network" src="https://github.com/user-attachments/assets/21e03f02-f059-4c1f-9a87-2c51ec65e9cd"></td>
+    <td><img width="200" height="150" alt="create-a-virtual-network" src="https://github.com/user-attachments/assets/201775ec-ba42-451b-9fdb-0a8a4bf911ed">
+</td>
   <tr>
     <td>Step 1</td>
     <td>Step 2</td>
