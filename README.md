@@ -41,7 +41,10 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 *Ensure proper networking by setting up the virtual network within the same region as the resource group.*
 
 - Create a **Resource Group** in the desired region.
-- Set up a **Virtual Network** 
+    - Name: Active-Directory-Lab (*name is a matter of preference*)
+    - Region: (US) East US 2 (*Initial region selection is optional but must be consistently used throughout the project*)
+- Set up a **Virtual Network**
+    - Name: Active-Directory-VNet (*name is a matter of preference*)    
     - Attach the **Virtual Network** to the **Resource Group**.
   <table>
   <tr>
@@ -58,7 +61,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 
 🔷***Create the Domain Controller (DC-1)***  
 *Create a virtual machine to act as the domain controller.*
-- Resource Group: Select one created in 
+- Resource Group: Active-Directory-Lab (*Choose the previously created resource group*)
 - Image: Windows Server 2022 (at least 2 vCPUs)
 - Name: DC-1
 - Username: labuser, Password: Cyberlab123!
