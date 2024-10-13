@@ -69,11 +69,39 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - Username: labuser, Password: Cyberlab123!
 - **Virtual Network**: Active-Directory-VNet; *leave subnet as default*.
 
+<table>
+  <tr>
+    <td><img width="200" height="150" alt="create-a-vm-1" src="https://github.com/user-attachments/assets/3ecce515-9fee-409d-927d-5b20b4e65397"></td>
+    <td><img width="200" height="150" alt="create-a-vm-2" src="https://github.com/user-attachments/assets/86433202-a1c5-4063-a6c1-89c58b38b0dd"></td>
+    <td><img width="200" height="150" alt="create-a-vm-3" src="https://github.com/user-attachments/assets/56231de6-f754-464d-bf9c-f217cfdda215"></td>
+    <td><img width="200" height="150" alt="create-a-vm-networking-4" src="https://github.com/user-attachments/assets/0b75e55e-7168-4c0d-948b-cb838e42e741"></td>
+  <tr>
+    <td>Step 1</td>
+    <td>Step 2</td>
+    <td>Step 3</td>
+    <td>Step 4</td>
+  </tr>
+</table>
+
+
+
 🔷***Set DC-1’s Private IP Address to Static***  
 *To ensure consistent network configuration, set DC-1's private IP to static.*
 
 - Azure Portal > **Virtual Machines** > **DC-1** > **Networking** > **IP Configuration**.
      - Set **Private IP** to **Static** and click **Save**.
+  <table>
+  <tr>
+    <td><img width="200" height="150" alt="dc1-static-nic-9" src="https://github.com/user-attachments/assets/db68dab4-06ae-4950-b37f-da736ef6656a">
+</td>
+    <td><img width="200" height="150" alt="dc1-static-nic-10" src="https://github.com/user-attachments/assets/28aae395-6359-4b45-b399-0728b8a70038">
+</td>
+   
+  <tr>
+    <td>Step 1</td>
+    <td>Step 2</td>
+  </tr>
+</table>
 
 🔷***Disable the Windows Firewall on DC-1***  
 *Disable the firewall to allow client connections to the domain during the lab.*
@@ -83,6 +111,16 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     - Go to **Windows Defender Firewall Properties**.
     - Set the Firewall state to **Off** for Domain, Private, and Public Profiles.
     - Apply the changes.
+  <table>
+  <tr>
+    <td><img width="200" height="150" alt="how-to-view-ip-14" src="https://github.com/user-attachments/assets/9f3770f2-2833-4b29-a816-1d0af887d6c0"><img width="200" height="150" alt="dc1-RDP-1" src="https://github.com/user-attachments/assets/0e2666db-0d2e-45e9-b73f-0a6be357034e"></td>
+    <td><img width="200" height="150" alt="windows-firewall0run-12" src="https://github.com/user-attachments/assets/63db9cb9-9187-4164-89ec-cc2b20c8e761"><img width="200" height="150" alt="windows-firewall-run-13" src="https://github.com/user-attachments/assets/5fa21321-b8f2-4782-bb3a-97bde36aa0bd"></td>
+  
+  <tr>
+    <td>Step 1</td>
+    <td>Step 2</td>
+  </tr>
+</table>
 
 🔷***Create the Client-1 VM***  
 *Set up a client virtual machine for testing domain connectivity. Ensure the virtual machine uses the previously created resource group and virtual network.*
