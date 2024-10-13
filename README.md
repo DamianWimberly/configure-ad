@@ -134,13 +134,17 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - **Virtual Network**: Active-Directory-VNet; *leave subnet as default*.
 <table>
   <tr>
-    <td>![create-a-vm-client-5](https://github.com/user-attachments/assets/ef6f707c-e12c-476f-9fbf-25d794c96e48)
+    <td><img width="200" height="150" alt="create-a-vm-client-5" src="https://github.com/user-attachments/assets/ef6f707c-e12c-476f-9fbf-25d794c96e48">
+
 </td>
-    <td>![create-a-vm-clinet-6](https://github.com/user-attachments/assets/4b87c395-8cd6-409e-9f7d-23fd7a16af38)
+    <td><img width="200" height="150" alt="create-a-vm-client-6" src="https://github.com/user-attachments/assets/4b87c395-8cd6-409e-9f7d-23fd7a16af38">
+
 </td>
-    <td>![create-a-vm-client-7](https://github.com/user-attachments/assets/50df0c21-2f61-465a-bfd2-f2b7e765d996)
+    <td><img width="200" height="150" alt="create-a-vm-client-7" src="https://github.com/user-attachments/assets/50df0c21-2f61-465a-bfd2-f2b7e765d996">
+
 </td>
-    <td>![create-a-vm-clientnetworking-8](https://github.com/user-attachments/assets/037dc25b-afae-4027-87a6-a363f8e54005)
+    <td><img width="200" height="150" alt="create-a-vm-clientnetworking-8" src="https://github.com/user-attachments/assets/037dc25b-afae-4027-87a6-a363f8e54005">
+
 </td>
   <tr>
     <td>Step 1</td>
@@ -156,28 +160,27 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - Azure Portal > **Virtual Machines** > **Client-1** > **Networking** > **DNS Servers**.
     - Set to **Custom** and enter DC-1’s static private IP.
     - Save the settings.
+
 <table>
   <tr>
-    <td>![how-to-view-ip-14](https://github.com/user-attachments/assets/0bef0a3b-3ef8-4994-a695-05cb912ddca8)
-</td>
-    <td>![client1-network-settings-15](https://github.com/user-attachments/assets/6bb194ab-0d17-48df-961f-151d0b1f0475)
-</td>
-    <td>![client1-dns-16](https://github.com/user-attachments/assets/9f1d042b-5f20-4fc9-a415-64cc3515d7d5)
-</td>
-   
+    <td><img width="200" height="150" alt="how-to-view-ip-14" src="https://github.com/user-attachments/assets/0bef0a3b-3ef8-4994-a695-05cb912ddca8"></td>
+    <td><img width="200" height="150" alt="client1-network-settings-15" src="https://github.com/user-attachments/assets/6bb194ab-0d17-48df-961f-151d0b1f0475"></td>
+    <td><img width="200" height="150" alt="client1-dns-16" src="https://github.com/user-attachments/assets/9f1d042b-5f20-4fc9-a415-64cc3515d7d5"></td>
+  
   <tr>
     <td>Step 1</td>
     <td>Step 2</td>
     <td>Step 3</td>
   </tr>
 </table>
+
 🔷***Restart Client-1***  
 *Apply the new DNS settings by restarting Client-1.*
 
 - Azure Portal > **Virtual Machines** > **Client-1** > **Restart**.
 <table>
   <tr>
-    <td>![client1-restart-17](https://github.com/user-attachments/assets/232a3936-60b6-422f-b6c0-e0f452931d22)
+    <td><img width="200" height="150" alt="client1-restart-17" src="https://github.com/user-attachments/assets/232a3936-60b6-422f-b6c0-e0f452931d22">
 </td>
    
   <tr>
@@ -194,14 +197,11 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 <table>
   <tr>
     <td><img width="200" height="150" alt="obtain-public-ips" src="https://github.com/user-attachments/assets/12c2ff58-fbc0-40cc-963c-901a53cb68b1"><img width="200" height="150" alt="client1-RDP-18" src="https://github.com/user-attachments/assets/5abdcfc1-20b0-4b1d-a13b-d4c19749c84c"></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><img width="200" height="150" alt="pinging-dc1-19" src="https://github.com/user-attachments/assets/609e7e36-f9a1-4558-a6f2-830dc27dcbf1">
+</td>
   <tr>
     <td>Step 1</td>
     <td>Step 2</td>
-    <td>Step 3</td>
-    <td>Step 4</td>
   </tr>
 </table>
 
