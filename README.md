@@ -131,6 +131,23 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - Image: Windows 10 Pro (at least 2 vCPUs)
 - Username: labuser, Password: Cyberlab123!
 - **Virtual Network**: Active-Directory-VNet; *leave subnet as default*.
+<table>
+  <tr>
+    <td>![create-a-vm-client-5](https://github.com/user-attachments/assets/ef6f707c-e12c-476f-9fbf-25d794c96e48)
+</td>
+    <td>![create-a-vm-clinet-6](https://github.com/user-attachments/assets/4b87c395-8cd6-409e-9f7d-23fd7a16af38)
+</td>
+    <td>![create-a-vm-client-7](https://github.com/user-attachments/assets/50df0c21-2f61-465a-bfd2-f2b7e765d996)
+</td>
+    <td>![create-a-vm-clientnetworking-8](https://github.com/user-attachments/assets/037dc25b-afae-4027-87a6-a363f8e54005)
+</td>
+  <tr>
+    <td>Step 1</td>
+    <td>Step 2</td>
+    <td>Step 3</td>
+    <td>Step 4</td>
+  </tr>
+</table>
 
 🔷***Set Client-1 to Use DC-1 as DNS***  
 *Configure Client-1’s DNS to point to DC-1’s private IP so it can locate the domain controller for authentication and network services.*
@@ -138,11 +155,34 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - Azure Portal > **Virtual Machines** > **Client-1** > **Networking** > **DNS Servers**.
     - Set to **Custom** and enter DC-1’s static private IP.
     - Save the settings.
-
+<table>
+  <tr>
+    <td>![how-to-view-ip-14](https://github.com/user-attachments/assets/0bef0a3b-3ef8-4994-a695-05cb912ddca8)
+</td>
+    <td>![client1-network-settings-15](https://github.com/user-attachments/assets/6bb194ab-0d17-48df-961f-151d0b1f0475)
+</td>
+    <td>![client1-dns-16](https://github.com/user-attachments/assets/9f1d042b-5f20-4fc9-a415-64cc3515d7d5)
+</td>
+   
+  <tr>
+    <td>Step 1</td>
+    <td>Step 2</td>
+    <td>Step 3</td>
+  </tr>
+</table>
 🔷***Restart Client-1***  
 *Apply the new DNS settings by restarting Client-1.*
 
 - Azure Portal > **Virtual Machines** > **Client-1** > **Restart**.
+<table>
+  <tr>
+    <td>![client1-restart-17](https://github.com/user-attachments/assets/232a3936-60b6-422f-b6c0-e0f452931d22)
+</td>
+   
+  <tr>
+    <td>Step 1</td>
+      </tr>
+</table>
 
 🔷***Ping DC-1 from Client-1*** 
 *Verify network connectivity between Client-1 and DC-1.*
