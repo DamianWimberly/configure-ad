@@ -41,11 +41,11 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 *Ensure proper networking by setting up the virtual network within the same region as the resource group.*
 
 - Create a **Resource Group** in the desired region.
-    - Name: Active-Directory-Lab (*name is a matter of preference*)
-    - Region: (US) East US 2 (*Initial region selection is optional but must be consistently used throughout the project*)
+    - **Name**: Active-Directory-Lab 
+    - **Region**: (US) East US 2 
 - Set up a **Virtual Network**
-    - Name: Active-Directory-VNet (*name is a matter of preference*)    
-    - Attach the **Virtual Network** to the **Resource Group**.
+    - **Name**: Active-Directory-VNet 
+    - Attach the **Virtual Network** to the **Resource Group** previously created.
   <table>
   <tr>
     <td><img width="200" height="150" alt="create-a-resource-group" src="https://github.com/user-attachments/assets/2647a5f2-620e-4388-aa5d-2001ffd95e1c">
@@ -60,12 +60,12 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 
 
 🔷***Create the Domain Controller (DC-1)***  
-*Create a virtual machine to act as the domain controller.*
-- Resource Group: Active-Directory-Lab (*Choose the previously created resource group*)
+*Create a virtual machine to act as the domain controller. Ensure the virtual machine uses the previously created resource group and virtual network.*
+- **Resource Group**: Active-Directory-Lab
 - Image: Windows Server 2022 (at least 2 vCPUs)
-- Name: DC-1
+- **Name**: DC-1
 - Username: labuser, Password: Cyberlab123!
-- Virtual Network: Select the network created earlier; *leave subnet as default*.
+- **Virtual Network**: Active-Directory-VNet; *leave subnet as default*.
 
 🔷***Set DC-1’s Private IP Address to Static***  
 *To ensure consistent network configuration, set DC-1's private IP to static.*
@@ -83,12 +83,13 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     - Apply the changes.
 
 🔷***Create the Client-1 VM***  
-*Set up a client virtual machine for testing domain connectivity.*
+*Set up a client virtual machine for testing domain connectivity. Ensure the virtual machine uses the previously created resource group and virtual network.*
 
+- **Resource Group**: Active-Directory-Lab
 - Image: Windows 10 Pro (at least 2 vCPUs)
-- Name: Client-1
+- **Name**: Client-1
 - Username: labuser, Password: Cyberlab123!
-- Virtual Network: Select the same network used for DC-1; *leave subnet as default*.
+- **Virtual Network**: Active-Directory-VNet; *leave subnet as default*.
 
 🔷***Set Client-1 to Use DC-1 as DNS***  
 *Configure Client-1’s DNS to point to DC-1’s private IP so it can locate the domain controller for authentication and network services.*
