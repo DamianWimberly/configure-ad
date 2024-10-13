@@ -47,7 +47,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     - **Name**: Active-Directory-VNet 
     - Attach the **Virtual Network** to the **Resource Group** previously created.
     -  **Region**: (US) East US 2 
-  <table>
+<table>
   <tr>
     <td><img width="200" height="150" alt="create-a-resource-group" src="https://github.com/user-attachments/assets/2647a5f2-620e-4388-aa5d-2001ffd95e1c">
 </td>
@@ -90,7 +90,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 
 - Azure Portal > **Virtual Machines** > **DC-1** > **Networking** > **IP Configuration**.
      - Set **Private IP** to **Static** and click **Save**.
-  <table>
+<table>
   <tr>
     <td><img width="200" height="150" alt="dc1-static-nic-9" src="https://github.com/user-attachments/assets/db68dab4-06ae-4950-b37f-da736ef6656a">
 </td>
@@ -111,7 +111,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     - Go to **Windows Defender Firewall Properties**.
     - Set the Firewall state to **Off** for Domain, Private, and Public Profiles.
     - Apply the changes.
-  <table>
+ <table>
   <tr>
     <td><img width="200" height="150" alt="how-to-view-ip-14" src="https://github.com/user-attachments/assets/9f3770f2-2833-4b29-a816-1d0af887d6c0"><img width="200" height="150" alt="dc1-RDP-1" src="https://github.com/user-attachments/assets/0e2666db-0d2e-45e9-b73f-0a6be357034e"></td>
     <td><img width="200" height="150" alt="windows-firewall0run-12" src="https://github.com/user-attachments/assets/63db9cb9-9187-4164-89ec-cc2b20c8e761"><img width="200" height="150" alt="windows-firewall-run-13" src="https://github.com/user-attachments/assets/5fa21321-b8f2-4782-bb3a-97bde36aa0bd"></td>
