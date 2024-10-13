@@ -113,7 +113,8 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     - Apply the changes.
  <table>
   <tr>
-    <td><img width="200" height="150" alt="how-to-view-ip-14" src="https://github.com/user-attachments/assets/9f3770f2-2833-4b29-a816-1d0af887d6c0"><img width="200" height="150" alt="dc1-RDP-1" src="https://github.com/user-attachments/assets/0e2666db-0d2e-45e9-b73f-0a6be357034e"></td>
+    <td><img width="200" height="150" alt="obtain-public-ips" src="https://github.com/user-attachments/assets/12c2ff58-fbc0-40cc-963c-901a53cb68b1">
+<img width="200" height="150" alt="dc1-RDP-1" src="https://github.com/user-attachments/assets/0e2666db-0d2e-45e9-b73f-0a6be357034e"></td>
     <td><img width="200" height="150" alt="windows-firewall0run-12" src="https://github.com/user-attachments/assets/63db9cb9-9187-4164-89ec-cc2b20c8e761"><img width="200" height="150" alt="windows-firewall-run-13" src="https://github.com/user-attachments/assets/5fa21321-b8f2-4782-bb3a-97bde36aa0bd"></td>
   
   <tr>
@@ -190,6 +191,19 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - Open **Command Prompt** or **PowerShell** on **Client-1**.
    - Run the following command:  
   `ping <DC-1-private-IP-address>`.
+<table>
+  <tr>
+    <td><img width="200" height="150" alt="obtain-public-ips" src="https://github.com/user-attachments/assets/12c2ff58-fbc0-40cc-963c-901a53cb68b1"><img width="200" height="150" alt="client1-RDP-18" src="https://github.com/user-attachments/assets/5abdcfc1-20b0-4b1d-a13b-d4c19749c84c"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  <tr>
+    <td>Step 1</td>
+    <td>Step 2</td>
+    <td>Step 3</td>
+    <td>Step 4</td>
+  </tr>
+</table>
 
 ***Deploying Active Directory***
 ---
