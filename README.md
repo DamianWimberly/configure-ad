@@ -215,9 +215,26 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - Open **Server Manager** > **Add Roles and Features**.
     - Select **Active Directory Domain Services** > **Add Features** > **Install**.
 - After installation, click **Promote this server to a domain controller**.
-    - Select **Add a new forest** with root domain name: **mydomain.com**.
-    - Set up a username/password, de-select **Create DNS delegation**, and click **Install**.
+    - Select **Add a new forest** with root domain name: **mydomain.com** in *Deployment Configuration*.
+    - In *Domain Controller Options*, create a password for DSRM and de-select **Create DNS delegation** in *DNS Options*.
+    - Then, **Install**. The server will automatically restart. 
     - After restart, log in as `mydomain.com\labuser`.
+<table>
+  <tr>
+    <td><img width="200" height="150" alt="configure-server-dc1-21" src="https://github.com/user-attachments/assets/aea6474b-7aa6-4ad2-8d5d-c292be0130b8"><img width="200" height="150" alt="configure-server-dc1-roles-22" src="https://github.com/user-attachments/assets/f11c581a-febe-4d3a-bc7f-9752c0569935"><img width="200" height="150" alt="configure-server-dc1-install-23" src="https://github.com/user-attachments/assets/0c09a076-c8e6-408f-bdf5-173b3fe3d288">
+</td>
+    <td><img width="200" height="150" alt="promote-as-dcontroller-24" src="https://github.com/user-attachments/assets/ffd5717f-71f8-4b06-98aa-994155e0200e"><img width="200" height="150" alt="promote-as-DC-forest-25" src="https://github.com/user-attachments/assets/80b5cafe-012f-4e93-a3b7-1131ce742b50"><img width="200" height="150" alt="25-dc-options" src="https://github.com/user-attachments/assets/c9360591-c482-4439-821f-39e7f025d19f"><img width="200" height="150" alt="25-dc-options-deselect" src="https://github.com/user-attachments/assets/5e172e56-c190-4ff7-8898-311efd07731b">
+</td>
+   <td><img width="200" height="150" alt="dc-success-27" src="https://github.com/user-attachments/assets/ddfda5ae-c3ef-492f-85a6-dc15e733aefc"><img width="200" height="150" alt="dc1-RDP-domain-27" src="https://github.com/user-attachments/assets/5cac0f36-b83f-4623-88b1-8e8b45ac0ab6">
+</td>
+  <tr>
+    <td>Step 1</td>
+    <td>Step 2</td>
+    <td>Step 3</td>
+  
+  </tr>
+</table>
+
 
 🔶***Create Organizational Units (OUs)***  
 *Organize resources within the domain by creating Organizational Units.*
