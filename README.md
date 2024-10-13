@@ -245,6 +245,17 @@ This lab demonstrates the process of setting up and configuring a Domain Control
       - `_EMPLOYEES`
       - `_ADMINS`
       - `_CLIENTS`
+<table>
+  <tr>
+    <td><img width="200" height="150" alt="ad-users-28" src="https://github.com/user-attachments/assets/cb18f93f-0166-4cda-87d0-cb61a9dc9bf1"></td>
+    <td><img width="200" height="150" alt="ad-users-OU-29" src="https://github.com/user-attachments/assets/3865881b-3cfb-4270-b7e6-5c57565d9bf0"></td>
+    <td><img width="200" height="150" alt="ad-users-employees-30" src="https://github.com/user-attachments/assets/898917de-9a0f-4204-8141-72bfaa675474"></td>
+  <tr>
+    <td>Step 1</td>
+    <td>Step 2</td>
+    <td>Step 3</td>
+  </tr>
+</table>
 
 🔶***Create a Domain Admin User*** 
 *Create a user with domain admin privileges.*
@@ -252,6 +263,19 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - In **_ADMINS**, right-click > **New** > **User**.
     - Create user: **Jane Doe** with the username: **jane_admin**.
     - Right-click **Jane Doe** > **Properties** > **Member Of** > **Add**: **Domain Admins**.
+<table>
+  <tr>
+    <td><img width="200" height="150" alt="ad-users-admins-janep1-32" src="https://github.com/user-attachments/assets/29d6942c-64d8-4d72-9ccc-363426d8a9f8"></td>
+    <td><img width="200" height="150" alt="ad-users-admins-janep2-33" src="https://github.com/user-attachments/assets/6d86e270-ef81-4ec4-a972-870729fbee1b"><img width="200" height="150" alt="ad-users-admins-janep3-34" src="https://github.com/user-attachments/assets/a2f47ee3-d000-4ff2-86d3-d9c92030764f"></td>
+    <td><img width="200" height="150" alt="ad-users-admins-janep4-35" src="https://github.com/user-attachments/assets/d22706b4-8e67-4004-9f13-ca166a009f95"></td>
+  
+  <tr>
+    <td>Step 1</td>
+    <td>Step 2</td>
+    <td>Step 3</td>
+   
+  </tr>
+</table>
 
 🔶***Log out and log back in as Jane Doe***  
 *Use the domain admin account for future configurations.*
