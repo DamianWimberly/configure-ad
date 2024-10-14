@@ -279,19 +279,48 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 
 🔶***Log out and log back in as Jane Doe***  
 *Use the domain admin account for future configurations.*
-
 - Log out of **DC-1**.
 - Log back in as `mydomain.com\jane_admin`.
+
+<table>
+  <tr>
+    <td><img width="200" height="150" alt="jane_admin-RDP-36" src="https://github.com/user-attachments/assets/8dbf9edd-97dd-4f17-9988-6a2e13ce4a5b">
+</td>
+    <td><img width="200" height="150" alt="jane_admin-RDP-37" src="https://github.com/user-attachments/assets/726ea1fb-d5c5-4f20-b78f-80f4a53e6e4c">
+</td>
+  
+  <tr>
+    <td>Step 1</td>
+    <td>Step 2</td>
+  </tr>
+</table>
 
 🔶***Join Client-1 to the Domain***  
 *Add Client-1 to the domain for centralized management.*
 
 - Log in to **Client-1** as **labuser** via RDP.
-    - Open **System** > **Rename this PC (advanced)**.
+    - Open **System** > **Rename this PC (advanced)** > **Change** (*under the Computer Name tab*)
     - Under **Member of**, enter: **mydomain.com**.
-    - Click **OK** and restart **Client-1**.
+        - In **Computer Name/Domainn Changes**   , enter the name and password for the `jane_admin` account
+        - Click **OK** and restart **Client-1**.
 - Verify **Client-1** appears in **ADUC** under **mydomain.com > Computers**.
 - Move **Client-1** to the **_CLIENTS** OU.
+<table>
+  <tr>
+    <td><img width="200" height="150" alt="client1-RDP-18" src="https://github.com/user-attachments/assets/36ef55fb-febd-4c0b-b138-33742413cdab">
+</td>
+    <td><img width="200" height="150" alt="client-to-domain38" src="https://github.com/user-attachments/assets/f9c7b364-76ca-40ef-83c1-02b02d242303"><img width="200" height="150" alt="join-client-to-domain-39" src="https://github.com/user-attachments/assets/5c986424-bd04-4c5a-9faa-54395ed0c7a1">
+</td>
+    <td><img width="200" height="150" alt="verify-client-40" src="https://github.com/user-attachments/assets/7d22c7ba-0439-4d29-bd04-ff8e8b0cacc0">
+</td>
+
+  <tr>
+    <td>Step 1</td>
+    <td>Step 2</td>
+    <td>Step 3</td>
+    
+  </tr>
+</table>
 
 🔶***Set Up Remote Desktop for Non-Admin Users on Client-1***  
 *Enable domain users to access Client-1 via Remote Desktop.*
