@@ -350,9 +350,26 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 *Create multiple users in the _EMPLOYEES OU for testing.*
 
 - Log in to **DC-1** as `jane_admin`.
-- Open **PowerShell ISE** as Administrator.
-    - Run the [user creation script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) to generate users.
+- Open and Copy the [user creation script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)
+- Open **PowerShell ISE** as Administrator and create a new file named `create-users`
+    - Paste and Run the [user creation script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) to generate users.
+      
 - Log in to **Client-1** with one of the generated accounts.
+ 
+<table>
+  <tr>
+    <td><img width="200" height="150" alt="jane_admin-RDP-36" src="https://github.com/user-attachments/assets/8dbf9edd-97dd-4f17-9988-6a2e13ce4a5b"></td>
+    <td><img width="200" height="150" alt="copy-the-script-46" src="https://github.com/user-attachments/assets/36f77313-a8d7-4efc-ab50-d1bd8106cd2d">
+</td>
+    <td><img width="200" height="150" alt="powershell-paste-script-47" src="https://github.com/user-attachments/assets/a28a7b2e-6865-47e0-bee8-7e521a562c44"><img width="200" height="150" alt="powershell-script-run-48" src="https://github.com/user-attachments/assets/c4706bbe-0122-4984-abe1-0103a0fd2e97"></td>
+    <td></td>
+  <tr>
+    <td>Step 1</td>
+    <td>Step 2</td>
+    <td>Step 3</td>
+    <td>Step 4</td>
+  </tr>
+</table>
 
 ***Managing User Account Security and Logs in Active Directory***
 ---
