@@ -329,7 +329,22 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - Open **System** > **Remote Desktop**.
     - Click **Select users that can remotely access this PC**.
     -  Add **Domain Users** > Click **OK**.
-
+<table>
+  <tr>
+    <td><img width="200" height="150" alt="RDP-client-with-janeadmin-41" src="https://github.com/user-attachments/assets/ffc31f91-6390-483d-928d-297bb4d27c24">
+</td>
+    <td><img width="200" height="150" alt="about-domain-users-rdp-42" src="https://github.com/user-attachments/assets/e6591fa8-a424-4314-81ba-5f926de02a4b"><img width="200" height="150" alt="about-domain-users-rdp-p2-43" src="https://github.com/user-attachments/assets/419973fc-915c-4e4b-aba9-f0f2c2869c95">
+</td>
+    <td><img width="200" height="150" alt="about-domain-users-rdp-p3-44" src="https://github.com/user-attachments/assets/a6144d7d-3318-419a-b3e7-e00c5c5fb68e">
+</td>
+ 
+  <tr>
+    <td>Step 1</td>
+    <td>Step 2</td>
+    <td>Step 3</td>
+   
+  </tr>
+</table>
 🔶***Create Additional Users and Log In to Client-1***  
 *Create multiple users in the _EMPLOYEES OU for testing.*
 
