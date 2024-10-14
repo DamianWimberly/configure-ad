@@ -345,6 +345,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
    
   </tr>
 </table>
+
 🔶***Create Additional Users and Log In to Client-1***  
 *Create multiple users in the _EMPLOYEES OU for testing.*
 
