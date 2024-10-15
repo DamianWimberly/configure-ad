@@ -476,6 +476,23 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     - Right-click a user and select **Disable Account**.
 - Attempt to log in on **Client-1** and observe the error.
 - Re-enable the account and log in again.
+<table>
+  <tr>
+    <td><img width="200" height="150"  alt="Screenshot 2024-10-15 at 3 31 37 PM" src="https://github.com/user-attachments/assets/32b06f71-79d3-4434-8654-34198dabbfd3">
+</td>
+    <td><img width="200" height="150" width="254" alt="Screenshot 2024-10-15 at 3 32 48 PM" src="https://github.com/user-attachments/assets/7769c2f6-f857-4b7d-aea6-8699619f0ab1">
+</td>
+    <td><img width="200" height="150"  alt="Screenshot 2024-10-15 at 3 33 15 PM" src="https://github.com/user-attachments/assets/cd6dc241-2455-4f5f-85b4-648dc5c24a25">
+</td>
+    <td><img width="200" height="150"  alt="Screenshot 2024-10-15 at 3 33 59 PM" src="https://github.com/user-attachments/assets/0cdad614-d661-4667-bca4-0609ade8714d">
+</td>
+  <tr>
+    <td>Step 1</td>
+    <td>Step 2</td>
+    <td>Step 3</td>
+    <td>Step 4</td>
+  </tr>
+</table>
 
 🔷***Observing Logs***  
 *Check logs for login failures and account lockouts.*
@@ -486,15 +503,12 @@ This lab demonstrates the process of setting up and configuring a Domain Control
  
 <table>
   <tr>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><img width="200" height="150" alt="Screenshot 2024-10-15 at 3 44 15 PM" src="https://github.com/user-attachments/assets/92b26780-5bfd-4a4f-a897-4c61f917d9b3">
+</td>
+   
   <tr>
     <td>Step 1</td>
-    <td>Step 2</td>
-    <td>Step 3</td>
-    <td>Step 4</td>
+    
   </tr>
 </table>
 
