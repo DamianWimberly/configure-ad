@@ -352,9 +352,10 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - Log in to **DC-1** as `jane_admin`.
 - Open and Copy the [user creation script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1)
 - Open **PowerShell ISE** as Administrator and create a new file named `create-users`
-    - Paste and Run the [user creation script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) to generate users.
+    - Paste and Run the [user creation script](https://github.com/joshmadakor1/AD_PS/blob/master/Generate-Names-Create-Users.ps1) to generate users into the `_EMPLOYEES` organizational unit
+    - Per the script, the default password for each User is "**Password1**"
       
-- Log in to **Client-1** with one of the generated accounts now listed in the `_EMPLOYEES` organizational unit in **ADUC**
+- Log into **Client-1** with one of the generated accounts now listed in the `_EMPLOYEES` organizational unit in **ADUC** to verify proper setup.
  
 <table>
   <tr>
@@ -362,9 +363,8 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     <td><img width="200" height="150" alt="copy-the-script-46" src="https://github.com/user-attachments/assets/36f77313-a8d7-4efc-ab50-d1bd8106cd2d">
 </td>
     <td><img width="200" height="150" alt="powershell-paste-script-47" src="https://github.com/user-attachments/assets/a28a7b2e-6865-47e0-bee8-7e521a562c44"><img width="200" height="150" alt="powershell-script-run-48" src="https://github.com/user-attachments/assets/c4706bbe-0122-4984-abe1-0103a0fd2e97"></td>
-    <td><img width="200" height="150" alt="powershell-employees-49" src="https://github.com/user-attachments/assets/d2bc0483-f2fe-437e-99d8-ecd3f5ce9d96">
+    <td><img width="150" height="150" alt="failed-passwd-random-user-52" src="https://github.com/user-attachments/assets/797b20da-1ea8-41f4-9cf6-2e7cb15bef2b"><img  width="150" height="150" alt="cud jot 50" src="https://github.com/user-attachments/assets/1501d035-81f0-469f-992e-5e7fd1fef7e8"><img width="150" height="150" alt="cud jot 51" src="https://github.com/user-attachments/assets/594c733e-46fa-4b93-83d4-30f07198460f"></td>
 
-</td>
   <tr>
     <td>Step 1</td>
     <td>Step 2</td>
