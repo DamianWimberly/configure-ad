@@ -384,23 +384,72 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - Select a user in **_EMPLOYEES**, log into **Client-1**, and attempt incorrect passwords 10 times.
 - After 10 attempts, use the correct password. No lockout occurs until Group Policy is configured.
 
+<table>
+  <tr>
+    <td><img width="200" height="150" alt="failed-passwd-random-user-52" src="https://github.com/user-attachments/assets/9dc8569b-8089-439c-bbf4-c849cd6ac7c6">
+
+</td>
+    <td><img width="200" height="150" alt="failed-passwd-on-purpose-53" src="https://github.com/user-attachments/assets/a55e87f1-c2bc-47a8-af5b-b60bf5f22e92">
+
+</td>
+    <td><img width="200" height="150"  src="https://github.com/user-attachments/assets/061e03c7-d322-43b7-9ef3-1c040e76bfaf">
+<img  width="200" height="150" src="https://github.com/user-attachments/assets/912d005d-bff9-45ea-8898-e07d7ab184b2">
+</td>
+  <tr>
+    <td>Step 1</td>
+    <td>Step 2</td>
+    <td>Step 3</td>e
+  </tr>
+</table>
+
 🔷***Configure Group Policy to Lock Out Accounts After 5 Failed Attempts***  
 *Apply an account lockout policy to prevent brute force attacks.*
 
 - Log in to **DC-1** as `jane_admin`.
 - Open **Group Policy Management Console**.
-- Right-click **Default Domain Policy** > **Edit**.
+- Right-click **Default Domain Policy** under `mydomain.com` > **Edit**.
     - Navigate to **Computer Configuration** > **Policies** > **Windows Settings** > **Security Settings** > **Account Policies** > **Account Lockout Policy**.
     - Set **Account Lockout Duration** to **30 minutes**.
     - Set **Account Lockout Threshold** to **5 invalid logon attempts**.
     - Set **Reset Account Lockout Counter After** to **10 minutes**.
 - Run `gpupdate /force` on **Client-1** to apply the policy.
+<table>
+  <tr>
+    <td><img width="200" height="150" alt="jane_admin-RDP-36" src="https://github.com/user-attachments/assets/4262afba-09aa-483c-893b-7c0bed5947bc">
+</td>
+    <td><img width="150" height="150" alt="open-gp-54" src="https://github.com/user-attachments/assets/eeb95d39-f8f1-4212-8298-76db641f8b6b"><img width="150" height="150" alt="edit-default-domain-policy-55" src="https://github.com/user-attachments/assets/e7be7d41-234c-4481-88ee-292dc81b326e"><img width="150" height="150" alt="gp-56" src="https://github.com/user-attachments/assets/3de200a7-5bef-4de2-bc95-23364f92a08d">
+</td>
+    <td><img width="200" height="150" alt="gp-lockout-settings-57" src="https://github.com/user-attachments/assets/93f11ad7-d9ac-4e74-b584-483800775f75"><img width="200" height="150" alt="set-lockout-policies-57" src="https://github.com/user-attachments/assets/b9016ea6-85d3-42e4-9530-a674a689d22f">
+</td>
+    <td><img width="200" height="150" alt="gp-force-update-58" src="https://github.com/user-attachments/assets/e5c6e078-5855-4893-b5f8-7d8528d36828">
+</td>
+  <tr>
+    <td>Step 1</td>
+    <td>Step 2</td>
+    <td>Step 3</td>
+    <td>Step 4</td>
+  </tr>
+</table>
 
 🔷***Test the Lockout Policy*** 
 *Verify the account lockout after 5 failed login attempts.*
 
 - Attempt incorrect passwords for a user on **Client-1**.
 - After 5 attempts, the account will be locked.
+<table>
+  <tr>
+    <td><img width="200" height="150" alt="failed-passwd-on-purpose-53" src="https://github.com/user-attachments/assets/49d7caae-4411-4416-a9ad-d4c4063a7373">
+</td>
+    <td><img width="200" height="150" alt="lockout-in-action-59" src="https://github.com/user-attachments/assets/5b966c52-009c-4b85-9ce9-d9cbcd696e4a">
+</td>
+   
+  <tr>
+    <td>Step 1</td>
+    <td>Step 2</td>
+   
+  </tr>
+</table>
+
 
 🔷***Unlock the User Account***  
 *Manually unlock a locked-out user.*
