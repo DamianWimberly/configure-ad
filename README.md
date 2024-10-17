@@ -54,8 +54,8 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     <td><img width="200" height="150" alt="create-a-virtual-network" src="https://github.com/user-attachments/assets/201775ec-ba42-451b-9fdb-0a8a4bf911ed">
 </td>
   <tr>
-    <td>Step 1</td>
-    <td>Step 2</td>
+    <td>Resource Group</td>
+    <td>Virtual Network</td>
   </tr>
 </table>
 
@@ -76,10 +76,10 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     <td><img width="200" height="150" alt="create-a-vm-3" src="https://github.com/user-attachments/assets/56231de6-f754-464d-bf9c-f217cfdda215"></td>
     <td><img width="200" height="150" alt="create-a-vm-networking-4" src="https://github.com/user-attachments/assets/0b75e55e-7168-4c0d-948b-cb838e42e741"></td>
   <tr>
-    <td>Step 1</td>
-    <td>Step 2</td>
-    <td>Step 3</td>
-    <td>Step 4</td>
+    <td>Name/Region Selection</td>
+    <td>Image Selection</td>
+    <td>Image Size Selection</td>
+    <td>VNet Selection</td>
   </tr>
 </table>
 
@@ -98,8 +98,8 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 </td>
    
   <tr>
-    <td>Step 1</td>
-    <td>Step 2</td>
+    <td>Navigate to IP Configuration</td>
+    <td>Set to Static IP</td>
   </tr>
 </table>
 
@@ -118,8 +118,8 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     <td><img width="200" height="150" alt="windows-firewall0run-12" src="https://github.com/user-attachments/assets/63db9cb9-9187-4164-89ec-cc2b20c8e761"><img width="200" height="150" alt="windows-firewall-run-13" src="https://github.com/user-attachments/assets/5fa21321-b8f2-4782-bb3a-97bde36aa0bd"></td>
   
   <tr>
-    <td>Step 1</td>
-    <td>Step 2</td>
+    <td>RDP into DC-1 via Public IP </td>
+    <td>Firewall State: OFF</td>
   </tr>
 </table>
 
@@ -147,10 +147,10 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 
 </td>
   <tr>
-    <td>Step 1</td>
-    <td>Step 2</td>
-    <td>Step 3</td>
-    <td>Step 4</td>
+    <td>Name/Region Selection</td>
+    <td>Image Selection</td>
+    <td>Image Size Selection</td>
+    <td>VNet Selection</td>
   </tr>
 </table>
 
@@ -168,9 +168,9 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     <td><img width="200" height="150" alt="client1-dns-16" src="https://github.com/user-attachments/assets/9f1d042b-5f20-4fc9-a415-64cc3515d7d5"></td>
   
   <tr>
-    <td>Step 1</td>
-    <td>Step 2</td>
-    <td>Step 3</td>
+    <td>DC-1's Private IP </td>
+    <td>Navigate to Client-1 IP Configuration</td>
+    <td>Set Custom DNS Server </td>
   </tr>
 </table>
 
@@ -184,7 +184,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 </td>
    
   <tr>
-    <td>Step 1</td>
+    <td>Restart Client-1</td>
       </tr>
 </table>
 
@@ -200,8 +200,8 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     <td><img width="200" height="150" alt="pinging-dc1-19" src="https://github.com/user-attachments/assets/609e7e36-f9a1-4558-a6f2-830dc27dcbf1">
 </td>
   <tr>
-    <td>Step 1</td>
-    <td>Step 2</td>
+    <td>RDP into Client-1 via Public IP</td>
+    <td>Ping DC-1</td>
   </tr>
 </table>
 
