@@ -98,7 +98,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 </td>
    
   <tr>
-    <td>Navigate to IP Configuration</td>
+    <td>Navigate to DC-1's IP Configuration</td>
     <td>Set to Static IP</td>
   </tr>
 </table>
@@ -169,7 +169,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
   
   <tr>
     <td>DC-1's Private IP </td>
-    <td>Navigate to Client-1 IP Configuration</td>
+    <td>Navigate to Client-1's IP Configuration</td>
     <td>Set Custom DNS Server </td>
   </tr>
 </table>
