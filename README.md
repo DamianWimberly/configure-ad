@@ -394,7 +394,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 </td>
   <tr>
     <td>Select a User</td>
-    <td>Invalid Logins</td>
+    <td>Incorrect Passwords</td>
     <td>Verify NO Account Lockout</td>
   </tr>
 </table>
@@ -441,8 +441,8 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 </td>
    
   <tr>
-    <td>Step 1</td>
-    <td>Step 2</td>
+    <td>Incorrect Passwords</td>
+    <td>Account Lockout</td>
    
   </tr>
 </table>
@@ -454,6 +454,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - On **DC-1**, open **Active Directory Users and Computers**.
     - Right-click the user and select **Unlock Account**.
     - Optionally reset the password.
+    - Log in with User
   <table>
   <tr>
     <td><img width="200" height="150" alt="locate-cud jot-60" src="https://github.com/user-attachments/assets/6bd6083a-1a0b-4aa5-ae9b-014ad34b002d">
@@ -461,8 +462,8 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     <td><img width="200" height="150" alt="unlock-cud jot-61" src="https://github.com/user-attachments/assets/a0c7b965-50fc-4220-8c41-a82514dbd829">
 </td>
    <tr>
-    <td>Step 1</td>
-    <td>Step 2</td>
+    <td>Locked-out User in ADUC </td>
+    <td>Unlock User</td>
   </tr>
 </table>
 
