@@ -289,7 +289,6 @@ This lab demonstrates the process of setting up and configuring a Domain Control
   
   <tr>
     <td>Login via RDP: mydomain.com\(admin user)</td>
-    <td>Admin Login</td>
   </tr>
 </table>
 
@@ -315,7 +314,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
   <tr>
     <td>RDP into Client-1</td>
     <td>Add Client-1 to mydomain.com</td>
-    <td>Verify</td>
+    <td>Verify Client-1 is in ADUC</td>
     
   </tr>
 </table>
@@ -367,7 +366,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     <td>RDP into DC-1 as Admin</td>
     <td>Copy the Script</td>
     <td>Run Script in Powershell ISE</td>
-    <td>Generated User Login</td>
+    <td>Generated-User Login</td>
   </tr>
 </table>
 
@@ -394,9 +393,9 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 <img  width="200" height="150" src="https://github.com/user-attachments/assets/912d005d-bff9-45ea-8898-e07d7ab184b2">
 </td>
   <tr>
-    <td>Step 1</td>
-    <td>Step 2</td>
-    <td>Step 3</td>e
+    <td>Select a User</td>
+    <td>Invalid Logins</td>
+    <td>Verify NO Account Lockout</td>e
   </tr>
 </table>
 
@@ -410,7 +409,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     - Set **Account Lockout Duration** to **30 minutes**.
     - Set **Account Lockout Threshold** to **5 invalid logon attempts**.
     - Set **Reset Account Lockout Counter After** to **10 minutes**.
-- Run `gpupdate /force` on **Client-1** to apply the policy.
+- Run `gpupdate /force` in terminal on **Client-1** to apply the policy.
 <table>
   <tr>
     <td><img width="200" height="150" alt="jane_admin-RDP-36" src="https://github.com/user-attachments/assets/4262afba-09aa-483c-893b-7c0bed5947bc">
@@ -422,10 +421,10 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     <td><img width="200" height="150" alt="gp-force-update-58" src="https://github.com/user-attachments/assets/e5c6e078-5855-4893-b5f8-7d8528d36828">
 </td>
   <tr>
-    <td>Step 1</td>
-    <td>Step 2</td>
-    <td>Step 3</td>
-    <td>Step 4</td>
+    <td>RDP into DC-1 as Admin</td>
+    <td>Account Lockout Policy in GPMC</td>
+    <td>Set Lockout Policies</td>
+    <td>gpudate/force</td>
   </tr>
 </table>
 
