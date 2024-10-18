@@ -395,7 +395,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
   <tr>
     <td>Select a User</td>
     <td>Invalid Logins</td>
-    <td>Verify NO Account Lockout</td>e
+    <td>Verify NO Account Lockout</td>
   </tr>
 </table>
 
