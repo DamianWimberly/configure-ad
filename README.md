@@ -284,9 +284,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 
 <table>
   <tr>
-    <td><img width="200" height="150" alt="jane_admin-RDP-36" src="https://github.com/user-attachments/assets/8dbf9edd-97dd-4f17-9988-6a2e13ce4a5b">
-</td>
-    <td><img width="200" height="150" alt="jane_admin-RDP-37" src="https://github.com/user-attachments/assets/726ea1fb-d5c5-4f20-b78f-80f4a53e6e4c">
+    <td><img width="200" height="150" alt="jane_admin-RDP-36" src="https://github.com/user-attachments/assets/8dbf9edd-97dd-4f17-9988-6a2e13ce4a5b"><img width="200" height="150" alt="jane_admin-RDP-37" src="https://github.com/user-attachments/assets/726ea1fb-d5c5-4f20-b78f-80f4a53e6e4c">
 </td>
   
   <tr>
@@ -301,7 +299,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - Log in to **Client-1** as **labuser** via RDP.
     - Open **System** > **Rename this PC (advanced)** > **Change** (*under the Computer Name tab*)
     - Under **Member of**, enter: **mydomain.com**.
-        - In **Computer Name/Domainn Changes**   , enter the name and password for the `jane_admin` account
+        - In **Computer Name/Domain Changes**   , enter the name and password for the `jane_admin` account
         - Click **OK** and restart **Client-1**.
 - Verify **Client-1** appears in **ADUC** under **mydomain.com > Computers**.
 - Move **Client-1** to the **_CLIENTS** OU.
@@ -315,9 +313,9 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 </td>
 
   <tr>
-    <td>Step 1</td>
-    <td>Step 2</td>
-    <td>Step 3</td>
+    <td>RDP into Client-1</td>
+    <td>Add Client-1 to mydomain.com</td>
+    <td>Verify</td>
     
   </tr>
 </table>
@@ -339,9 +337,9 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 </td>
  
   <tr>
-    <td>Step 1</td>
-    <td>Step 2</td>
-    <td>Step 3</td>
+    <td>RDP into Client-1 as Admin</td>
+    <td>Navigate to Remote Desktop</td>
+    <td>Add Domain Users</td>
    
   </tr>
 </table>
@@ -366,10 +364,10 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     <td><img width="150" height="150" alt="failed-passwd-random-user-52" src="https://github.com/user-attachments/assets/797b20da-1ea8-41f4-9cf6-2e7cb15bef2b"><img  width="150" height="150" alt="cud jot 50" src="https://github.com/user-attachments/assets/1501d035-81f0-469f-992e-5e7fd1fef7e8"><img width="150" height="150" alt="cud jot 51" src="https://github.com/user-attachments/assets/594c733e-46fa-4b93-83d4-30f07198460f"></td>
 
   <tr>
-    <td>Step 1</td>
-    <td>Step 2</td>
-    <td>Step 3</td>
-    <td>Step 4</td>
+    <td>RDP into DC-1 as Admin</td>
+    <td>Copy the Script</td>
+    <td>Run Script in Powershell ISE</td>
+    <td>Generated User Login</td>
   </tr>
 </table>
 
