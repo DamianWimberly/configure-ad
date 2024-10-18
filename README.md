@@ -228,9 +228,9 @@ This lab demonstrates the process of setting up and configuring a Domain Control
    <td><img width="200" height="150" alt="dc-success-27" src="https://github.com/user-attachments/assets/ddfda5ae-c3ef-492f-85a6-dc15e733aefc"><img width="200" height="150" alt="dc1-RDP-domain-27" src="https://github.com/user-attachments/assets/5cac0f36-b83f-4623-88b1-8e8b45ac0ab6">
 </td>
   <tr>
-    <td>Step 1</td>
-    <td>Step 2</td>
-    <td>Step 3</td>
+    <td>Install AD via Server Manager</td>
+    <td>Promote to a Domain Controller</td>
+    <td>Login via the Domain</td>
   
   </tr>
 </table>
@@ -251,9 +251,9 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     <td><img width="200" height="150" alt="ad-users-OU-29" src="https://github.com/user-attachments/assets/3865881b-3cfb-4270-b7e6-5c57565d9bf0"></td>
     <td><img width="200" height="150" alt="ad-users-employees-30" src="https://github.com/user-attachments/assets/898917de-9a0f-4204-8141-72bfaa675474"></td>
   <tr>
-    <td>Step 1</td>
-    <td>Step 2</td>
-    <td>Step 3</td>
+    <td>Open ADUC</td>
+    <td>New Organizational Unit</td>
+    <td>Create OU</td>
   </tr>
 </table>
 
@@ -270,9 +270,9 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     <td><img width="200" height="150" alt="ad-users-admins-janep4-35" src="https://github.com/user-attachments/assets/d22706b4-8e67-4004-9f13-ca166a009f95"></td>
   
   <tr>
-    <td>Step 1</td>
-    <td>Step 2</td>
-    <td>Step 3</td>
+    <td>New User</td>
+    <td>New User Credentials</td>
+    <td>Add User to Domain Admins</td>
    
   </tr>
 </table>
@@ -290,8 +290,8 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 </td>
   
   <tr>
-    <td>Step 1</td>
-    <td>Step 2</td>
+    <td>Login via RDP: mydomain.com\(admin user)</td>
+    <td>Admin Login</td>
   </tr>
 </table>
 
