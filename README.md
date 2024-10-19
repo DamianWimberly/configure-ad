@@ -1,4 +1,4 @@
-<p align="center">
+ <p align="center">
 <img src="https://i.imgur.com/pU5A58S.png" alt="Microsoft Active Directory Logo"/>
 </p>
 
@@ -461,9 +461,12 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 </td>
     <td><img width="200" height="150" alt="unlock-cud jot-61" src="https://github.com/user-attachments/assets/a0c7b965-50fc-4220-8c41-a82514dbd829">
 </td>
+<td><img  width="200" height="150" src="https://github.com/user-attachments/assets/912d005d-bff9-45ea-8898-e07d7ab184b2">
+</td>
    <tr>
     <td>Locked-out User in ADUC </td>
     <td>Unlock User</td>
+    <td>Verify Login</td>
   </tr>
 </table>
 
@@ -485,10 +488,10 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     <td><img width="200" height="150"  alt="Screenshot 2024-10-15 at 3 33 59 PM" src="https://github.com/user-attachments/assets/0cdad614-d661-4667-bca4-0609ade8714d">
 </td>
   <tr>
-    <td>Step 1</td>
-    <td>Step 2</td>
-    <td>Step 3</td>
-    <td>Step 4</td>
+    <td>Disable a User</td>
+    <td>User Disabled</td>
+    <td>Enable User</td>
+    <td>Verify Login</td>
   </tr>
 </table>
 
@@ -505,7 +508,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 </td>
    
   <tr>
-    <td>Step 1</td>
+    <td>Event Viewer</td>
     
   </tr>
 </table>
