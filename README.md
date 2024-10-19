@@ -440,11 +440,11 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     <td><img width="200" height="150" alt="lockout-in-action-59" src="https://github.com/user-attachments/assets/5b966c52-009c-4b85-9ce9-d9cbcd696e4a">
 </td>
    
-  <tr>
+<tr>
     <td>Incorrect Passwords</td>
     <td>Account Lockout</td>
    
-  </tr>
+</tr>
 </table>
 
 
@@ -455,19 +455,19 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     - Right-click the user and select **Unlock Account**.
     - Optionally reset the password.
     - Log in with User
-  <table>
-  <tr>
+<table>
+<tr>
     <td><img width="200" height="150" alt="locate-cud jot-60" src="https://github.com/user-attachments/assets/6bd6083a-1a0b-4aa5-ae9b-014ad34b002d">
 </td>
     <td><img width="200" height="150" alt="unlock-cud jot-61" src="https://github.com/user-attachments/assets/a0c7b965-50fc-4220-8c41-a82514dbd829">
 </td>
 <td><img  width="200" height="150" src="https://github.com/user-attachments/assets/912d005d-bff9-45ea-8898-e07d7ab184b2">
 </td>
-   <tr>
+<tr>
     <td>Locked-out User in ADUC </td>
     <td>Unlock User</td>
     <td>Verify Login</td>
-  </tr>
+</tr>
 </table>
 
 🔷 ***Enable and Disable User Accounts***  
@@ -478,7 +478,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - Attempt to log in on **Client-1** and observe the error.
 - Re-enable the account and log in again.
 <table>
-  <tr>
+<tr>
     <td><img width="200" height="150"  alt="Screenshot 2024-10-15 at 3 31 37 PM" src="https://github.com/user-attachments/assets/32b06f71-79d3-4434-8654-34198dabbfd3">
 </td>
     <td><img width="200" height="150" width="254" alt="Screenshot 2024-10-15 at 3 32 48 PM" src="https://github.com/user-attachments/assets/7769c2f6-f857-4b7d-aea6-8699619f0ab1">
@@ -492,7 +492,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     <td>User Disabled</td>
     <td>Enable User</td>
     <td>Verify Login</td>
-  </tr>
+</tr>
 </table>
 
 🔷***Observing Logs***  
@@ -503,13 +503,13 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     - Look for **Audit Failure** events with **Event ID 4625**.
  
 <table>
-  <tr>
+<tr>
     <td><img width="200" height="150" alt="Screenshot 2024-10-15 at 3 44 15 PM" src="https://github.com/user-attachments/assets/92b26780-5bfd-4a4f-a897-4c61f917d9b3">
 </td>
    
-  <tr>
+<tr>
     <td>Event Viewer</td>
     
-  </tr>
+</tr>
 </table>
 
