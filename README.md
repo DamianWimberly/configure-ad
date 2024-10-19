@@ -65,8 +65,8 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - **Resource Group**: Active-Directory-Lab
 - **Name**: DC-1
 - **Region**: (US) East US 2
-- Image: Windows Server 2022 (at least 2 vCPUs)
-- Username: labuser, Password: Cyberlab123!
+- **Image**: Windows Server 2022 (at least 2 vCPUs)
+- **Username**: labuser, Password: Cyberlab123!
 - **Virtual Network**: Active-Directory-VNet; *leave subnet as default*.
 
 <table>
@@ -129,8 +129,8 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - **Resource Group**: Active-Directory-Lab
 - **Name**: Client-1
 - **Region**: (US) East US 2
-- Image: Windows 10 Pro (at least 2 vCPUs)
-- Username: labuser, Password: Cyberlab123!
+- **Image**: Windows 10 Pro (at least 2 vCPUs)
+- **Username**: labuser, Password: Cyberlab123!
 - **Virtual Network**: Active-Directory-VNet; *leave subnet as default*.
 <table>
   <tr>
@@ -157,7 +157,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 🔷***Set Client-1 to Use DC-1 as DNS***  
 *Configure Client-1’s DNS to point to DC-1’s private IP so it can locate the domain controller for authentication and network services.*
 
-- Azure Portal > **Virtual Machines** > **Client-1** > **Networking** > **DNS Servers**.
+- Azure Portal > **Virtual Machines** > **Client-1** > **Networking** > **IP Configuration** > **DNS Servers**.
     - Set to **Custom** and enter DC-1’s static private IP.
     - Save the settings.
 
@@ -188,9 +188,10 @@ This lab demonstrates the process of setting up and configuring a Domain Control
       </tr>
 </table>
 
-🔷***Ping DC-1 from Client-1*** 
+🔷***Ping DC-1 from Client-1***   
 *Verify network connectivity between Client-1 and DC-1.*
 
+- Log in to **Client-1** via Remote Desktop.
 - Open **Command Prompt** or **PowerShell** on **Client-1**.
    - Run the following command:  
   `ping <DC-1-private-IP-address>`.
@@ -227,10 +228,11 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 </td>
    <td><img width="200" height="150" alt="dc-success-27" src="https://github.com/user-attachments/assets/ddfda5ae-c3ef-492f-85a6-dc15e733aefc"><img width="200" height="150" alt="dc1-RDP-domain-27" src="https://github.com/user-attachments/assets/5cac0f36-b83f-4623-88b1-8e8b45ac0ab6">
 </td>
+   
   <tr>
     <td>Install AD via Server Manager</td>
     <td>Promote to a Domain Controller</td>
-    <td>Login via the Domain</td>
+    <td>RDP into DC-1 via the Domain</td>
   
   </tr>
 </table>
@@ -257,7 +259,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
   </tr>
 </table>
 
-🔶***Create a Domain Admin User*** 
+🔶***Create a Domain Admin User***  
 *Create a user with domain admin privileges.*
 
 - In **_ADMINS**, right-click > **New** > **User**.
@@ -300,7 +302,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     - Under **Member of**, enter: **mydomain.com**.
         - In **Computer Name/Domain Changes**   , enter the name and password for the `jane_admin` account
         - Click **OK** and restart **Client-1**.
-- Verify **Client-1** appears in **ADUC** under **mydomain.com > Computers**.
+- Within DC-1, verify **Client-1** appears in **ADUC** under **mydomain.com > Computers**.
 - Move **Client-1** to the **_CLIENTS** OU.
 <table>
   <tr>
@@ -343,7 +345,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
   </tr>
 </table>
 
-🔶***Create Additional Users and Log In to Client-1***  
+🔶***Create Additional Users Able to Log In to Client-1***  
 *Create multiple users in the _EMPLOYEES OU for testing.*
 
 - Log in to **DC-1** as `jane_admin`.
@@ -376,9 +378,9 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 🔷***Dealing with Account Lockouts***  
 *Test the account lockout functionality and configure the policy.*
 
-- Log into **DC-1**.
+- Log in to **DC-1** as `jane_admin`.
 - Open **Active Directory Users and Computers**.
-- Select a user in **_EMPLOYEES**, log into **Client-1**, and attempt incorrect passwords 10 times.
+- Select a user in **_EMPLOYEES**, and attempt to log in to **Client-1** with 10 incorrect passwords.
 - After 10 attempts, use the correct password. No lockout occurs until Group Policy is configured.
 
 <table>
@@ -412,8 +414,6 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 - Run `gpupdate /force` in terminal on **Client-1** to apply the policy.
 <table>
   <tr>
-    <td><img width="200" height="150" alt="jane_admin-RDP-36" src="https://github.com/user-attachments/assets/4262afba-09aa-483c-893b-7c0bed5947bc">
-</td>
     <td><img width="150" height="150" alt="open-gp-54" src="https://github.com/user-attachments/assets/eeb95d39-f8f1-4212-8298-76db641f8b6b"><img width="150" height="150" alt="edit-default-domain-policy-55" src="https://github.com/user-attachments/assets/e7be7d41-234c-4481-88ee-292dc81b326e"><img width="150" height="150" alt="gp-56" src="https://github.com/user-attachments/assets/3de200a7-5bef-4de2-bc95-23364f92a08d">
 </td>
     <td><img width="200" height="150" alt="gp-lockout-settings-57" src="https://github.com/user-attachments/assets/93f11ad7-d9ac-4e74-b584-483800775f75"><img width="200" height="150" alt="set-lockout-policies-57" src="https://github.com/user-attachments/assets/b9016ea6-85d3-42e4-9530-a674a689d22f">
@@ -421,17 +421,16 @@ This lab demonstrates the process of setting up and configuring a Domain Control
     <td><img width="200" height="150" alt="gp-force-update-58" src="https://github.com/user-attachments/assets/e5c6e078-5855-4893-b5f8-7d8528d36828">
 </td>
   <tr>
-    <td>RDP into DC-1 as Admin</td>
     <td>Account Lockout Policy in GPMC</td>
     <td>Set Lockout Policies</td>
     <td>gpudate/force</td>
   </tr>
 </table>
 
-🔷***Test the Lockout Policy*** 
+🔷***Test the Lockout Policy***  
 *Verify the account lockout after 5 failed login attempts.*
 
-- Attempt incorrect passwords for a user on **Client-1**.
+- Select a user and attempt to log in to **Client-1** with 5 incorrect passwords.
 - After 5 attempts, the account will be locked.
 <table>
   <tr>
@@ -451,7 +450,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 🔷***Unlock the User Account***  
 *Manually unlock a locked-out user.*
 
-- On **DC-1**, open **Active Directory Users and Computers**.
+- In **DC-1**, open **Active Directory Users and Computers**.
     - Right-click the user and select **Unlock Account**.
     - Optionally reset the password.
     - Log in with User
@@ -473,7 +472,7 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 🔷 ***Enable and Disable User Accounts***  
 *Test account disabling and re-enabling functionality.*
 
-- On **DC-1**, navigate to **_EMPLOYEES** in **ADUC**.
+- In **DC-1**, navigate to **_EMPLOYEES** in **ADUC**.
     - Right-click a user and select **Disable Account**.
 - Attempt to log in on **Client-1** and observe the error.
 - Re-enable the account and log in again.
