@@ -40,10 +40,10 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 🔷***Create Resource Group and Virtual Network***  
 *Ensure proper networking by setting up the virtual network within the same region as the resource group.*
 
-- Create a **Resource Group** in the desired region.
+- In Azure, navigate to **Resource Groups** → **Create**.
     - **Name**: Active-Directory-Lab 
     - **Region**: (US) East US 2 
-- Set up a **Virtual Network**
+- In Azure, navigate to **Virtual Networks** → **Create**.
     - **Name**: Active-Directory-VNet 
     - Attach the **Virtual Network** to the **Resource Group** previously created.
     -  **Region**: (US) East US 2 
@@ -62,12 +62,14 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 
 🔷***Create the Domain Controller (DC-1)***  
 *Create a virtual machine to act as the domain controller. Ensure the virtual machine uses the previously created resource group and virtual network.*
-- **Resource Group**: Active-Directory-Lab
-- **Name**: DC-1
-- **Region**: (US) East US 2
-- **Image**: Windows Server 2022 (at least 2 vCPUs)
-- **Username**: labuser, Password: Cyberlab123!
-- **Virtual Network**: Active-Directory-VNet; *leave subnet as default*.
+
+- In Azure, navigate to **Virtual Machines** → **Create**.
+  - **Resource Group**: Active-Directory-Lab
+  - **Name**: DC-1
+  - **Region**: (US) East US 2
+  - **Image**: Windows Server 2022 (at least 2 vCPUs)
+  - **Username**: labuser, Password: Cyberlab123!
+  - **Virtual Network**: Active-Directory-VNet; *leave subnet as default*.
 
 <table>
   <tr>
@@ -126,12 +128,13 @@ This lab demonstrates the process of setting up and configuring a Domain Control
 🔷***Create the Client-1 VM***  
 *Set up a client virtual machine for testing domain connectivity. Ensure the virtual machine uses the previously created resource group and virtual network.*
 
-- **Resource Group**: Active-Directory-Lab
-- **Name**: Client-1
-- **Region**: (US) East US 2
-- **Image**: Windows 10 Pro (at least 2 vCPUs)
-- **Username**: labuser, Password: Cyberlab123!
-- **Virtual Network**: Active-Directory-VNet; *leave subnet as default*.
+- In Azure, navigate to **Virtual Machines** → **Create**.
+  - **Resource Group**: Active-Directory-Lab
+  - **Name**: Client-1
+  - **Region**: (US) East US 2
+  - **Image**: Windows 10 Pro (at least 2 vCPUs)
+  - **Username**: labuser, Password: Cyberlab123!
+  - **Virtual Network**: Active-Directory-VNet; *leave subnet as default*.
 <table>
   <tr>
     <td><img width="200" height="150" alt="create-a-vm-client-5" src="https://github.com/user-attachments/assets/ef6f707c-e12c-476f-9fbf-25d794c96e48">
