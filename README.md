@@ -68,7 +68,7 @@ This tutorial demonstrates the process of setting up and configuring a Domain Co
   - **Name**: DC-1
   - **Region**: (US) East US 2
   - **Image**: Windows Server 2022 (at least 2 vCPUs)
-  - **Authentication Type**: select → **Password** (*RDP into the VM with the username and password*)
+  - **Authentication Type**: select → **Password** (*the username and password are needed to RDP into the VM*)
   - **Virtual Network**: Active-Directory-VNet; *leave subnet as default*.
 
 <table>
@@ -133,7 +133,7 @@ This tutorial demonstrates the process of setting up and configuring a Domain Co
   - **Name**: Client-1
   - **Region**: (US) East US 2
   - **Image**: Windows 10 Pro (at least 2 vCPUs)
-  - **Authentication Type**: select → **Password** (*RDP into the VM with the username and password*)
+  - **Authentication Type**: select → **Password** (*the username and password are needed to RDP into the VM*)
   - **Virtual Network**: Active-Directory-VNet; *leave subnet as default*.
 <table>
   <tr>
