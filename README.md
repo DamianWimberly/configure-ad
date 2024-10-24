@@ -90,7 +90,7 @@ This tutorial demonstrates the process of setting up and configuring a Domain Co
 🔷***Set DC-1’s Private IP Address to Static***  
 *To ensure consistent network configuration, set DC-1's private IP to static.*
 
-- Azure Portal > **Virtual Machines** > **DC-1** > **Networking** > **IP Configuration**.
+- Azure Portal → **Virtual Machines** → **DC-1** → **Networking** → **IP Configuration**.
      - Set **Private IP** to **Static** and click **Save**.
 <table>
   <tr>
@@ -160,7 +160,7 @@ This tutorial demonstrates the process of setting up and configuring a Domain Co
 🔷***Set Client-1 to Use DC-1 as DNS***  
 *Configure Client-1’s DNS to point to DC-1’s private IP so it can locate the domain controller for authentication and network services.*
 
-- Azure Portal > **Virtual Machines** > **Client-1** > **Networking** > **IP Configuration** > **DNS Servers**.
+- Azure Portal → **Virtual Machines** → **Client-1** → **Networking** → **IP Configuration** → **DNS Servers**.
     - Set to **Custom** and enter DC-1’s static private IP.
     - Save the settings.
 
@@ -180,7 +180,7 @@ This tutorial demonstrates the process of setting up and configuring a Domain Co
 🔷***Restart Client-1***  
 *Apply the new DNS settings by restarting Client-1.*
 
-- Azure Portal > **Virtual Machines** > **Client-1** > **Restart**.
+- Azure Portal → **Virtual Machines** → **Client-1** → **Restart**.
 <table>
   <tr>
     <td><img width="200" height="150" alt="client1-restart-17" src="https://github.com/user-attachments/assets/232a3936-60b6-422f-b6c0-e0f452931d22">
@@ -216,8 +216,8 @@ This tutorial demonstrates the process of setting up and configuring a Domain Co
 *Set up Active Directory to make DC-1 a domain controller.*
 
 - Log in to **DC-1** via RDP.
-- Open **Server Manager** > **Add Roles and Features**.
-    - Select **Active Directory Domain Services** > **Add Features** > **Install**.
+- Open **Server Manager** → **Add Roles and Features**.
+    - Select **Active Directory Domain Services** → **Add Features** → **Install**.
 - After installation, click **Promote this server to a domain controller**.
     - Select **Add a new forest** with root domain name: **mydomain.com** in *Deployment Configuration*.
     - In *Domain Controller Options*, create a password for DSRM and de-select **Create DNS delegation** in *DNS Options*.
@@ -245,7 +245,7 @@ This tutorial demonstrates the process of setting up and configuring a Domain Co
 *Organize resources within the domain by creating Organizational Units.*
 
 - Open **Active Directory Users and Computers (ADUC)**.
-- Right-click **mydomain.com** > **New** > **Organizational Unit**.
+- Right-click **mydomain.com** → **New** → **Organizational Unit**.
     - Create the following OUs:
       - `_EMPLOYEES`
       - `_ADMINS`
@@ -265,9 +265,9 @@ This tutorial demonstrates the process of setting up and configuring a Domain Co
 🔶***Create a Domain Admin User***  
 *Create a user with domain admin privileges.*
 
-- In **_ADMINS**, right-click > **New** > **User**.
+- In **_ADMINS**, right-click → **New** → **User**.
     - Create user: **Jane Doe** with the username: **jane_admin**.
-    - Right-click **Jane Doe** > **Properties** > **Member Of** > **Add**: **Domain Admins**.
+    - Right-click **Jane Doe** → **Properties** → **Member Of** → **Add**: **Domain Admins**.
 <table>
   <tr>
     <td><img width="200" height="150" alt="ad-users-admins-janep1-32" src="https://github.com/user-attachments/assets/29d6942c-64d8-4d72-9ccc-363426d8a9f8"></td>
@@ -301,11 +301,11 @@ This tutorial demonstrates the process of setting up and configuring a Domain Co
 *Add Client-1 to the domain for centralized management.*
 
 - Log in to **Client-1** as **labuser** via RDP.
-    - Open **System** > **Rename this PC (advanced)** > **Change** (*under the Computer Name tab*)
+    - Open **System** → **Rename this PC (advanced)** → **Change** (*under the Computer Name tab*)
     - Under **Member of**, enter: **mydomain.com**.
         - In **Computer Name/Domain Changes**   , enter the name and password for the `jane_admin` account
         - Click **OK** and restart **Client-1**.
-- Within DC-1, verify **Client-1** appears in **ADUC** under **mydomain.com > Computers**.
+- Within DC-1, verify **Client-1** appears in **ADUC** under **mydomain.com → Computers**.
 - Move **Client-1** to the **_CLIENTS** OU.
 <table>
   <tr>
@@ -328,9 +328,9 @@ This tutorial demonstrates the process of setting up and configuring a Domain Co
 *Enable domain users to access Client-1 via Remote Desktop.*
 
 - Log in to **Client-1** as `mydomain.com\jane_admin`.
-- Open **System** > **Remote Desktop**.
+- Open **System** → **Remote Desktop**.
     - Click **Select users that can remotely access this PC**.
-    -  Add **Domain Users** > Click **OK**.
+    -  Add **Domain Users** → Click **OK**.
 <table>
   <tr>
     <td><img width="200" height="150" alt="RDP-client-with-janeadmin-41" src="https://github.com/user-attachments/assets/ffc31f91-6390-483d-928d-297bb4d27c24">
@@ -409,8 +409,8 @@ This tutorial demonstrates the process of setting up and configuring a Domain Co
 
 - Log in to **DC-1** as `jane_admin`.
 - Open **Group Policy Management Console**.
-- Right-click **Default Domain Policy** under `mydomain.com` > **Edit**.
-    - Navigate to **Computer Configuration** > **Policies** > **Windows Settings** > **Security Settings** > **Account Policies** > **Account Lockout Policy**.
+- Right-click **Default Domain Policy** under `mydomain.com` → **Edit**.
+    - Navigate to **Computer Configuration** → **Policies** → **Windows Settings** → **Security Settings** → **Account Policies** → **Account Lockout Policy**.
     - Set **Account Lockout Duration** to **30 minutes**.
     - Set **Account Lockout Threshold** to **5 invalid logon attempts**.
     - Set **Reset Account Lockout Counter After** to **10 minutes**.
@@ -501,7 +501,7 @@ This tutorial demonstrates the process of setting up and configuring a Domain Co
 *Check logs for login failures and account lockouts.*
 
 - Log in to **DC-1** or **Client-1** as `jane_admin`.
-- Open **Event Viewer** > **Windows Logs** > **Security**.
+- Open **Event Viewer** → **Windows Logs** → **Security**.
     - Look for **Audit Failure** events with **Event ID 4625**.
  
 <table>
